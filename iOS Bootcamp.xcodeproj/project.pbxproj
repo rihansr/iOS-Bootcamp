@@ -52,6 +52,7 @@
 		63DED96C2AD3CCE70057A584 /* AsyncImageBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9422AD3CCE70057A584 /* AsyncImageBootcamp.swift */; };
 		63DED96D2AD3CCE70057A584 /* TabViewBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9432AD3CCE70057A584 /* TabViewBootcamp.swift */; };
 		63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9442AD3CCE70057A584 /* IconBootcamp.swift */; };
+		63DED9712AD3D3A20057A584 /* Tuples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9702AD3D3A20057A584 /* Tuples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		63DED9422AD3CCE70057A584 /* AsyncImageBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageBootcamp.swift; sourceTree = "<group>"; };
 		63DED9432AD3CCE70057A584 /* TabViewBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewBootcamp.swift; sourceTree = "<group>"; };
 		63DED9442AD3CCE70057A584 /* IconBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconBootcamp.swift; sourceTree = "<group>"; };
+		63DED9702AD3D3A20057A584 /* Tuples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		633DBF9A2AD3CA6500F45A48 /* iOS Bootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				63DED96F2AD3D3A20057A584 /* SwiftBasics */,
 				63DED91A2AD3CCE70057A584 /* Bootcamps */,
 				633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */,
 				633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */,
@@ -196,6 +199,14 @@
 				63DED9442AD3CCE70057A584 /* IconBootcamp.swift */,
 			);
 			path = Bootcamps;
+			sourceTree = "<group>";
+		};
+		63DED96F2AD3D3A20057A584 /* SwiftBasics */ = {
+			isa = PBXGroup;
+			children = (
+				63DED9702AD3D3A20057A584 /* Tuples.swift */,
+			);
+			path = SwiftBasics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				63DED95E2AD3CCE70057A584 /* GroupBootcamp.swift in Sources */,
 				63DED9682AD3CCE70057A584 /* DarkModeBootcamp.swift in Sources */,
 				63DED9502AD3CCE70057A584 /* ColorPickerBootcamp.swift in Sources */,
+				63DED9712AD3D3A20057A584 /* Tuples.swift in Sources */,
 				63DED9482AD3CCE70057A584 /* SheetBootcamp.swift in Sources */,
 				63DED9672AD3CCE70057A584 /* TextFieldBootcamp.swift in Sources */,
 				63DED94D2AD3CCE70057A584 /* FrameBootcamp.swift in Sources */,
