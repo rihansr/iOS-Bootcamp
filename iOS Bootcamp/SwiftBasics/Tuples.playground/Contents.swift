@@ -1,10 +1,3 @@
-//
-//  Tuples.swift
-//  FirstIOSProject
-//
-//  Created by Macuser on 06/10/2023.
-//
-
 import Foundation
 
 var userName: String = "Rihan"
@@ -37,3 +30,9 @@ func userDetails(info: (name: String, new: Bool, premium: Bool)) {
 }
 
 let info = isNewUserPremium()
+
+func showUserDetails(info: (name: String, new: Bool, premium: Bool)) {
+    print("\(info.name), New: \(info.new), Premium: \(info.premium)")
+}
+
+showUserDetails(info: ("Rihan", false, true))
