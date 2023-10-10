@@ -17,7 +17,7 @@ let quiz1 = Quiz(title: "Quiz 1", createdAt: nil)
 let quiz2 = Quiz(title: "Quiz 2", createdAt: .now, isPremium: true)
 
 
-/// "Immutable Struct"
+// MARK: "Immutable Struct"
 // "All "let" constants = NOT mutable = "cannot mutate it!"
 struct UserModel1{
     let name: String
@@ -50,7 +50,7 @@ func markUserAsPremium2(){
 }
 markUserAsPremium2()
 
-/// "Mutable Struct"
+// MARK: "Mutable Struct"
 struct UserModel3{
     let name: String
     var isPremium: Bool

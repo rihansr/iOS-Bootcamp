@@ -59,6 +59,7 @@
 		633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BootcampApp.swift; sourceTree = "<group>"; };
 		633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633DBFA22AD3CA6700F45A48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArraysSetsDics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63DED91B2AD3CCE70057A584 /* ContextMenuBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuBootcamp.swift; sourceTree = "<group>"; };
 		63DED91C2AD3CCE70057A584 /* CustomModelBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModelBootcamp.swift; sourceTree = "<group>"; };
 		63DED91D2AD3CCE70057A584 /* TextBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBootcamp.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 				63DED9782AD3EC780057A584 /* Tuples.playground */,
 				63DED9792AD3F5DE0057A584 /* Enums.playground */,
 				63DED97A2AD404D00057A584 /* Classes.playground */,
+				63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */,
 			);
 			path = SwiftBasics;
 			sourceTree = "<group>";
