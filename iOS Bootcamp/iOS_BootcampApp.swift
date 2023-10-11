@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct iOS_BootcampApp: App {
+    
+    @StateObject var taskViewModel: TaskViewModel = TaskViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            TextFieldBootcamp()
+            NavigationStack{
+                TasksView()
+            }
+            .navigationViewStyle(.stack)
+            .environmentObject(taskViewModel)
         }
     }
 }

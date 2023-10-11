@@ -10,6 +10,13 @@
 		633DBF9C2AD3CA6500F45A48 /* iOS_BootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */; };
 		633DBFA02AD3CA6700F45A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */; };
 		633DBFA32AD3CA6700F45A48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633DBFA22AD3CA6700F45A48 /* Preview Assets.xcassets */; };
+		63B51F862AD69E75004FD296 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F7D2AD69E75004FD296 /* TaskViewModel.swift */; };
+		63B51F872AD69E75004FD296 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F7F2AD69E75004FD296 /* AddView.swift */; };
+		63B51F882AD69E75004FD296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B51F802AD69E75004FD296 /* LaunchScreen.storyboard */; };
+		63B51F892AD69E75004FD296 /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F812AD69E75004FD296 /* NoTasksView.swift */; };
+		63B51F8A2AD69E75004FD296 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F822AD69E75004FD296 /* TasksView.swift */; };
+		63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F832AD69E75004FD296 /* TaskItem.swift */; };
+		63B51F8C2AD69E75004FD296 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F852AD69E75004FD296 /* TaskModel.swift */; };
 		63DED9452AD3CCE70057A584 /* ContextMenuBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91B2AD3CCE70057A584 /* ContextMenuBootcamp.swift */; };
 		63DED9462AD3CCE70057A584 /* CustomModelBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91C2AD3CCE70057A584 /* CustomModelBootcamp.swift */; };
 		63DED9472AD3CCE70057A584 /* TextBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91D2AD3CCE70057A584 /* TextBootcamp.swift */; };
@@ -59,6 +66,13 @@
 		633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BootcampApp.swift; sourceTree = "<group>"; };
 		633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633DBFA22AD3CA6700F45A48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63B51F7D2AD69E75004FD296 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		63B51F7F2AD69E75004FD296 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		63B51F802AD69E75004FD296 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63B51F812AD69E75004FD296 /* NoTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
+		63B51F822AD69E75004FD296 /* TasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		63B51F832AD69E75004FD296 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		63B51F852AD69E75004FD296 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArraysSetsDics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9B2AD65D1B0081E35C /* Loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Loops.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9C2AD664900081E35C /* Statements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Statements.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -141,6 +155,7 @@
 		633DBF9A2AD3CA6500F45A48 /* iOS Bootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				63B51F7B2AD69E32004FD296 /* TodoApp */,
 				63DED9762AD3EC390057A584 /* SwiftBasics */,
 				63DED91A2AD3CCE70057A584 /* Bootcamps */,
 				633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */,
@@ -156,6 +171,44 @@
 				633DBFA22AD3CA6700F45A48 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63B51F7B2AD69E32004FD296 /* TodoApp */ = {
+			isa = PBXGroup;
+			children = (
+				63B51F842AD69E75004FD296 /* Models */,
+				63B51F7C2AD69E75004FD296 /* ViewModels */,
+				63B51F7E2AD69E75004FD296 /* Views */,
+			);
+			path = TodoApp;
+			sourceTree = "<group>";
+		};
+		63B51F7C2AD69E75004FD296 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				63B51F7D2AD69E75004FD296 /* TaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		63B51F7E2AD69E75004FD296 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63B51F7F2AD69E75004FD296 /* AddView.swift */,
+				63B51F802AD69E75004FD296 /* LaunchScreen.storyboard */,
+				63B51F812AD69E75004FD296 /* NoTasksView.swift */,
+				63B51F822AD69E75004FD296 /* TasksView.swift */,
+				63B51F832AD69E75004FD296 /* TaskItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63B51F842AD69E75004FD296 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63B51F852AD69E75004FD296 /* TaskModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		63DED91A2AD3CCE70057A584 /* Bootcamps */ = {
@@ -280,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B51F882AD69E75004FD296 /* LaunchScreen.storyboard in Resources */,
 				633DBFA32AD3CA6700F45A48 /* Preview Assets.xcassets in Resources */,
 				633DBFA02AD3CA6700F45A48 /* Assets.xcassets in Resources */,
 			);
@@ -294,9 +348,11 @@
 			files = (
 				63DED9582AD3CCE70057A584 /* OnAppearBootcamp.swift in Sources */,
 				63DED95D2AD3CCE70057A584 /* ViewModelBootcamp.swift in Sources */,
+				63B51F872AD69E75004FD296 /* AddView.swift in Sources */,
 				63DED94B2AD3CCE70057A584 /* NavigationStackBootcamp.swift in Sources */,
 				63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */,
 				63DED9572AD3CCE70057A584 /* PickerBootcamp.swift in Sources */,
+				63B51F8C2AD69E75004FD296 /* TaskModel.swift in Sources */,
 				63DED9692AD3CCE70057A584 /* AnimationTimingBootcamp.swift in Sources */,
 				63DED96D2AD3CCE70057A584 /* TabViewBootcamp.swift in Sources */,
 				63DED9662AD3CCE70057A584 /* TransitionAnimationBootcamp.swift in Sources */,
@@ -308,6 +364,7 @@
 				63DED9462AD3CCE70057A584 /* CustomModelBootcamp.swift in Sources */,
 				63DED9602AD3CCE70057A584 /* BadgesBootcamp.swift in Sources */,
 				63DED9522AD3CCE70057A584 /* DatePickerBootcamp.swift in Sources */,
+				63B51F8A2AD69E75004FD296 /* TasksView.swift in Sources */,
 				63DED96A2AD3CCE70057A584 /* SliderBootcamp.swift in Sources */,
 				63DED9622AD3CCE70057A584 /* StacksBootcamp.swift in Sources */,
 				63DED94E2AD3CCE70057A584 /* ToolbarBootcamp.swift in Sources */,
@@ -325,12 +382,15 @@
 				63DED94D2AD3CCE70057A584 /* FrameBootcamp.swift in Sources */,
 				63DED96B2AD3CCE70057A584 /* ActionSheetBootcamp.swift in Sources */,
 				63DED96C2AD3CCE70057A584 /* AsyncImageBootcamp.swift in Sources */,
+				63B51F862AD69E75004FD296 /* TaskViewModel.swift in Sources */,
 				63DED95A2AD3CCE70057A584 /* ButtonBootcamp.swift in Sources */,
 				63DED9552AD3CCE70057A584 /* SafeAreaBootcamp.swift in Sources */,
 				63DED94A2AD3CCE70057A584 /* ToggleBootcamp.swift in Sources */,
+				63B51F892AD69E75004FD296 /* NoTasksView.swift in Sources */,
 				63DED9452AD3CCE70057A584 /* ContextMenuBootcamp.swift in Sources */,
 				63DED9632AD3CCE70057A584 /* StepperBootcamp.swift in Sources */,
 				63DED95F2AD3CCE70057A584 /* AppStorageBootcamp.swift in Sources */,
+				63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */,
 				63DED94C2AD3CCE70057A584 /* GridViewBootcamp.swift in Sources */,
 				63DED9512AD3CCE70057A584 /* EnvironmentObjectBootcamp.swift in Sources */,
 				63DED9542AD3CCE70057A584 /* NavigationViewBootcamp.swift in Sources */,
