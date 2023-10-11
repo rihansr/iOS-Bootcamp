@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quiz {
+struct Quiz: HasTitle {
     let title: String
     let createdAt: Date?
     let isPremium: Bool?
@@ -10,6 +10,11 @@ struct Quiz {
         self.createdAt = createdAt ?? .now
         self.isPremium = isPremium
     }
+}
+
+// MARK: protocol
+protocol HasTitle {
+    var title: String { get }
 }
 
 
@@ -68,9 +73,11 @@ struct UserModel4{
     let name: String
     private(set) var isPremium: Bool
     
-    //    mutating func markUserAsPremium(){
-    //        isPremium = true
-    //    }
+    /*
+     mutating func markUserAsPremium(){
+     isPremium = true
+     }
+     */
     
     mutating func markUserAsPremium(premium: Bool){
         isPremium = premium

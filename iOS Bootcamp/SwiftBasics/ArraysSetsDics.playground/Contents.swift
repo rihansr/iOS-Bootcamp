@@ -33,9 +33,29 @@ fruitsArray.removeAll()
 
 
 // MARK: SET
-let fruitsSet: [String] = ["Apple", "Orange", "Guava", "Apple"]
+var fruitsSetA: Set<String> = ["Apple", "Orange", "Guava", "Apple", "Peach"] /* or Set<Int>()*/
+var fruitsSetB: Set<String> = ["Pineapple", "Grapes", "Orange", "Pomegranate"]
 
-print(fruitsSet)
+fruitsSetA.insert("Pineapple")
+fruitsSetB.remove("Peach")
+
+print("Both sets have the same fruits? \(fruitsSetA == fruitsSetB)")
+print("Fruits setA has all the fruits of setB? \(fruitsSetB.isSubset(of: fruitsSetA))")
+
+var allFruits = fruitsSetA.union(fruitsSetB)
+print("All fruits set: \(allFruits)")
+
+var commonFruits = fruitsSetA.intersection(fruitsSetB)
+print("Common fruits set: \(commonFruits)")
+
+var otherFruits = fruitsSetA.symmetricDifference(fruitsSetB)
+print("All Fruits(excluding common) set: \(otherFruits)")
+
+var otherFruitsInSet1 = fruitsSetA.subtracting(fruitsSetB)
+print("After excluding common fruits from setA: \(otherFruitsInSet1)")
+
+var otherFruitsInSet2 = fruitsSetB.subtracting(fruitsSetA)
+print("After excluding common fruits from setB: \(otherFruitsInSet2)")
 
 
 // MARK: DICTIONARY
@@ -45,9 +65,12 @@ print(fruitsDic[1] ?? "Unknown")
 
 print(fruitsDic)
 
+print("Keys: \(fruitsDic.keys)\nValues: \(fruitsDic.values)")
+
 fruitsDic[3] = "Banana"
 fruitsDic[10] = "Pineapple"
 
 fruitsDic.removeValue(forKey: 1)
+fruitsDic.removeAll()
 
 print(fruitsDic)
