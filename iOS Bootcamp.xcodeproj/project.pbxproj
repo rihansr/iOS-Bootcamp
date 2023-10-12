@@ -17,6 +17,7 @@
 		63B51F8A2AD69E75004FD296 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F822AD69E75004FD296 /* TasksView.swift */; };
 		63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F832AD69E75004FD296 /* TaskItem.swift */; };
 		63B51F8C2AD69E75004FD296 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F852AD69E75004FD296 /* TaskModel.swift */; };
+		63B51F8F2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */; };
 		63DED9452AD3CCE70057A584 /* ContextMenuBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91B2AD3CCE70057A584 /* ContextMenuBootcamp.swift */; };
 		63DED9462AD3CCE70057A584 /* CustomModelBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91C2AD3CCE70057A584 /* CustomModelBootcamp.swift */; };
 		63DED9472AD3CCE70057A584 /* TextBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED91D2AD3CCE70057A584 /* TextBootcamp.swift */; };
@@ -73,6 +74,7 @@
 		63B51F822AD69E75004FD296 /* TasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		63B51F832AD69E75004FD296 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		63B51F852AD69E75004FD296 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrowsBootcamp.swift; sourceTree = "<group>"; };
 		63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArraysSetsDics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9B2AD65D1B0081E35C /* Loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Loops.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9C2AD664900081E35C /* Statements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Statements.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -155,6 +157,7 @@
 		633DBF9A2AD3CA6500F45A48 /* iOS Bootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				63B51F8D2AD6A0D6004FD296 /* SwiftConcurrency */,
 				63B51F7B2AD69E32004FD296 /* TodoApp */,
 				63DED9762AD3EC390057A584 /* SwiftBasics */,
 				63DED91A2AD3CCE70057A584 /* Bootcamps */,
@@ -209,6 +212,14 @@
 				63B51F852AD69E75004FD296 /* TaskModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		63B51F8D2AD6A0D6004FD296 /* SwiftConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */,
+			);
+			path = SwiftConcurrency;
 			sourceTree = "<group>";
 		};
 		63DED91A2AD3CCE70057A584 /* Bootcamps */ = {
@@ -390,6 +401,7 @@
 				63DED9452AD3CCE70057A584 /* ContextMenuBootcamp.swift in Sources */,
 				63DED9632AD3CCE70057A584 /* StepperBootcamp.swift in Sources */,
 				63DED95F2AD3CCE70057A584 /* AppStorageBootcamp.swift in Sources */,
+				63B51F8F2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift in Sources */,
 				63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */,
 				63DED94C2AD3CCE70057A584 /* GridViewBootcamp.swift in Sources */,
 				63DED9512AD3CCE70057A584 /* EnvironmentObjectBootcamp.swift in Sources */,
