@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6316490F2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */; };
 		633DBF9C2AD3CA6500F45A48 /* iOS_BootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */; };
 		633DBFA02AD3CA6700F45A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */; };
 		633DBFA32AD3CA6700F45A48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633DBFA22AD3CA6700F45A48 /* Preview Assets.xcassets */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsyncBootcamp.swift; sourceTree = "<group>"; };
 		633DBF982AD3CA6500F45A48 /* iOS Bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Bootcamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BootcampApp.swift; sourceTree = "<group>"; };
 		633DBF9F2AD3CA6700F45A48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */,
+				6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				63DED96A2AD3CCE70057A584 /* SliderBootcamp.swift in Sources */,
 				63DED9622AD3CCE70057A584 /* StacksBootcamp.swift in Sources */,
 				63DED94E2AD3CCE70057A584 /* ToolbarBootcamp.swift in Sources */,
+				6316490F2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift in Sources */,
 				63DED95B2AD3CCE70057A584 /* ShapesBootcamp.swift in Sources */,
 				63DED94F2AD3CCE70057A584 /* DocumentationBootcamp.swift in Sources */,
 				63DED9642AD3CCE70057A584 /* IfLetGuardBootcamp.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Task: Identifiable, Codable {
+struct TaskModel: Identifiable, Codable {
     let id: String
     let title: String
     let isCompleted: Bool
@@ -18,7 +18,7 @@ struct Task: Identifiable, Codable {
         self.isCompleted = isCompleted
     }
     
-    func toggle() -> Task{
-        return Task(id: id, title: title, isCompleted: !isCompleted)
+    func toggle() -> TaskModel{
+        return TaskModel(id: id, title: title, isCompleted: !isCompleted)
     }
 }

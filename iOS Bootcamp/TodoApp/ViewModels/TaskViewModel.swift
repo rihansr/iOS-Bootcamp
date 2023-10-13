@@ -8,7 +8,7 @@
 import SwiftUI
 
 class TaskViewModel: ObservableObject {
-    @Published var tasks : [Task] = [] {
+    @Published var tasks : [TaskModel] = [] {
         didSet {
             save()
         }
@@ -26,7 +26,7 @@ class TaskViewModel: ObservableObject {
             self.isLoading = false
             guard
                 let data = UserDefaults.standard.data(forKey: self.storageKey),
-                let savedTasks = try? JSONDecoder().decode([Task].self, from: data) else {
+                let savedTasks = try? JSONDecoder().decode([TaskModel].self, from: data) else {
                 return
             }
             self.tasks = savedTasks
@@ -38,7 +38,7 @@ class TaskViewModel: ObservableObject {
             return
         }
         
-        tasks.append(Task(title: title, isCompleted: false))
+        tasks.append(TaskModel(title: title, isCompleted: false))
     }
     
     func remove(indexSet: IndexSet){
@@ -49,7 +49,7 @@ class TaskViewModel: ObservableObject {
         tasks.move(fromOffsets: indexSet, toOffset: index)
     }
     
-    func update(task: Task){
+    func update(task: TaskModel){
         if let index = tasks.firstIndex(where: {
             task.id == $0.id
         }){

@@ -14,11 +14,12 @@ struct iOS_BootcampApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                TasksView()
-            }
-            .navigationViewStyle(.stack)
-            .environmentObject(taskViewModel)
+            DownloadImageAsyncMain()
+//            NavigationStack{
+//                TasksView()
+//            }
+//            .navigationViewStyle(.stack)
+//            .environmentObject(taskViewModel)
         }
     }
 }

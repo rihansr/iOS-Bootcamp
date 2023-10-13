@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskItem: View {
-    let task: Task
+    let task: TaskModel
     var body: some View {
         HStack{
             Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
@@ -20,8 +20,8 @@ struct TaskItem: View {
 }
 
 struct TaskItem_Previews: PreviewProvider {
-    static var task1 = Task(title: "First item!", isCompleted: false)
-    static var task2 = Task(title: "Second item!", isCompleted: true)
+    static var task1 = TaskModel(title: "First item!", isCompleted: false)
+    static var task2 = TaskModel(title: "Second item!", isCompleted: true)
     
     static var previews: some View {
         Group{
