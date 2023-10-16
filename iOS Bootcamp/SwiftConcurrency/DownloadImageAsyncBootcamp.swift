@@ -42,6 +42,36 @@ class DownloadImageAsyncManager{
         }
     }
     
+    func downloadUsingThrowingContinuation() async throws -> UIImage? {
+        return try await withCheckedThrowingContinuation { continuation in
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                } else if let image = self.handleResponse(data: data, response: response) {
+                    continuation.resume(returning: image)
+                } else {
+                    continuation.resume(throwing: URLError(.badURL))
+                }
+            }
+            .resume()
+        }
+    }
+    
+    func downloadUsingContinuation() async -> UIImage? {
+        return await withCheckedContinuation({ continuation in
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard
+                    let _ = error,
+                    let image = self.handleResponse(data: data, response: response) else
+                {
+                    continuation.resume(returning: nil)
+                    return
+                }
+                continuation.resume(returning: image)
+            }
+        })
+    }
+    
     func fetchImage() async throws -> UIImage {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
@@ -111,29 +141,37 @@ class DownloadImageAsyncViewModel: ObservableObject{
     func fetchImage() async {
         /*
          manager.downloadWithEscaping { image, error in
-             if let image = image {
-                 DispatchQueue.main.async {
-                     self.images.append(image)
-                 }
-             }
+         if let image = image {
+         DispatchQueue.main.async {
+         self.images.append(image)
+         }
+         }
          }
          */
-         
+        
         /*
          manager.downLoadWithCombine()
-             .receive(on: DispatchQueue.main)
-             .sink { _ in
-                 
-             } receiveValue: { [weak self] image in
-                 if let image = image {
-                     self.images.append(image)
-                 }
-             }
-             .store(in: &cancellables)
+         .receive(on: DispatchQueue.main)
+         .sink { _ in
+         
+         } receiveValue: { [weak self] image in
+         if let image = image {
+         self.images.append(image)
+         }
+         }
+         .store(in: &cancellables)
          */
         
-        try? Task.checkCancellation()
-        let image = try? await manager.downloadWithAsync()
+        /*
+         let image = await manager.downloadUsingContinuation()
+         if let image = image {
+         await MainActor.run {
+         self.images.append(image)
+         }
+         }
+         */
+        
+        let image = try? await manager.downloadUsingThrowingContinuation()
         if let image = image {
             await MainActor.run {
                 self.images.append(image)
@@ -188,40 +226,40 @@ struct DownloadImageAsyncBootcamp: View {
             // Do single task
             /*
              task = Task(priority: .low) {
-                 await viewmodel.fetchImage()
-                 if let image = manager.image {
-                     images.append(image)
-                 }
+             await viewmodel.fetchImage()
+             if let image = manager.image {
+             images.append(image)
+             }
              }
              */
             
             // Do all tasks at the same time
             /*
              Task(priority: .high){
-                 print("HIGH & Piority: \(Task.currentPriority)")
-                 await viewmodel.fetchImage()
+             print("HIGH & Piority: \(Task.currentPriority)")
+             await viewmodel.fetchImage()
              }
              Task(priority: .userInitiated){
-                 print("USER-INITIATED & Piority: \(Task.currentPriority)")
-                 await viewmodel.fetchImage()
+             print("USER-INITIATED & Piority: \(Task.currentPriority)")
+             await viewmodel.fetchImage()
              }
              Task(priority: .medium){
-                 print("MEDIUM & Piority: \(Task.currentPriority)")
-                 await viewmodel.fetchImage()
+             print("MEDIUM & Piority: \(Task.currentPriority)")
+             await viewmodel.fetchImage()
              }
              Task(priority: .low){
-                 print("LOW & Piority: \(Task.currentPriority)")
-                 await viewmodel.fetchImage()
+             print("LOW & Piority: \(Task.currentPriority)")
+             await viewmodel.fetchImage()
              }
              Task(priority: .background){
-                 print("BACKGROUND & Piority: \(Task.currentPriority)")
-                 await viewmodel.fetchImage()
+             print("BACKGROUND & Piority: \(Task.currentPriority)")
+             await viewmodel.fetchImage()
              }
              */
             
             // Execute after completed all tasks
             Task{
-                await viewmodel.fetchImages()
+                await viewmodel.fetchImage()
             }
         }
         .onDisappear{
