@@ -31,17 +31,20 @@ struct DarkColorTheme: ColorTheme {
 
 struct ProtocolsBootcamp: View {
     
-    let theme: ColorTheme
+    @State var theme: ColorTheme
     
     var body: some View {
         ZStack{
             theme.tertiary.ignoresSafeArea()
-            Text("Press Me!!")
+            Text("Click Me!!")
                 .font(.headline)
                 .foregroundColor(theme.secondary)
                 .padding(.all)
                 .background(theme.primary)
                 .cornerRadius(6)
+                .onTapGesture {
+                    theme = DarkColorTheme()
+                }
         }
     }
 }
