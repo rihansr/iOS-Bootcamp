@@ -67,6 +67,7 @@
 		63DED96C2AD3CCE70057A584 /* AsyncImageBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9422AD3CCE70057A584 /* AsyncImageBootcamp.swift */; };
 		63DED96D2AD3CCE70057A584 /* TabViewBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9432AD3CCE70057A584 /* TabViewBootcamp.swift */; };
 		63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9442AD3CCE70057A584 /* IconBootcamp.swift */; };
+		63E9A91A2ADF9753004A7133 /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,7 @@
 		63DED9782AD3EC780057A584 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tuples.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63DED9792AD3F5DE0057A584 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63DED97A2AD404D00057A584 /* Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Classes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */,
 				63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */,
 				63C8D22B2ADE7B57004CBE60 /* PhotosPickerBootcamp.swift */,
+				63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				63DED96B2AD3CCE70057A584 /* ActionSheetBootcamp.swift in Sources */,
 				63DED96C2AD3CCE70057A584 /* AsyncImageBootcamp.swift in Sources */,
 				63B51F862AD69E75004FD296 /* TaskViewModel.swift in Sources */,
+				63E9A91A2ADF9753004A7133 /* StructClassActorBootcamp.swift in Sources */,
 				63DED95A2AD3CCE70057A584 /* ButtonBootcamp.swift in Sources */,
 				63C8D22C2ADE7B57004CBE60 /* PhotosPickerBootcamp.swift in Sources */,
 				63DED9552AD3CCE70057A584 /* SafeAreaBootcamp.swift in Sources */,

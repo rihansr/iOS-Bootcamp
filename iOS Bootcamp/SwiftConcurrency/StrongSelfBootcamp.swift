@@ -21,7 +21,7 @@ class StrongSelfBootcampViewModel: ObservableObject {
     func updateData(){
         /*
          Task{
-             title = await service.getData()
+         title = await service.getData()
          }
          */
         
@@ -31,13 +31,16 @@ class StrongSelfBootcampViewModel: ObservableObject {
         
         /*
          Task{ [self] in
-             self.title = await self.service.getData()
+         self.title = await self.service.getData()
          }
          */
     }
     
     /// This implies a weak reference
     func updateData1(){
+        /*
+         weak self: If this class want to deallocate thats totally fine because here this is a weak reference now, this is saying that if when this code comes back if the class is still in memory, we'll handle the response but if its is deallocated for whatever reason that is okay with us because if it's deallocated it's probably deallocated for a reason we propably don't even need to run these functions anymore
+         */
         Task{ [weak self] in
             if let title = await self?.service.getData(){
                 self?.title = title
