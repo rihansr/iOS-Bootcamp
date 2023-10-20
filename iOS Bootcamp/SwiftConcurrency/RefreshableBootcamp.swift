@@ -1,10 +1,3 @@
-//
-//  RefreshableBootcamp.swift
-//  iOS Bootcamp
-//
-//  Created by Macuser on 17/10/2023.
-//
-
 import SwiftUI
 
 class RefreshableDataManager{

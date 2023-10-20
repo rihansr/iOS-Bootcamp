@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 class StrongSelfDataService{
     
     /// Return data after two minutes
