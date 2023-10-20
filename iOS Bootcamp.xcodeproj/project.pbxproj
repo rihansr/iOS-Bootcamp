@@ -21,6 +21,7 @@
 		63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F832AD69E75004FD296 /* TaskItem.swift */; };
 		63B51F8C2AD69E75004FD296 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F852AD69E75004FD296 /* TaskModel.swift */; };
 		63B51F8F2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */; };
+		63B916822AE23E5C0088C475 /* ActorsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */; };
 		63C8D2262ADE447D004CBE60 /* StrongSelfBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */; };
 		63C8D2282ADE59DA004CBE60 /* MVVMBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */; };
 		63C8D22A2ADE683E004CBE60 /* RefreshableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */; };
@@ -86,6 +87,7 @@
 		63B51F832AD69E75004FD296 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		63B51F852AD69E75004FD296 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrowsBootcamp.swift; sourceTree = "<group>"; };
+		63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsBootcamp.swift; sourceTree = "<group>"; };
 		63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArraysSetsDics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSelfBootcamp.swift; sourceTree = "<group>"; };
 		63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBootcamp.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */,
 				63C8D22B2ADE7B57004CBE60 /* PhotosPickerBootcamp.swift */,
 				63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */,
+				63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				63DED9492AD3CCE70057A584 /* ListBootcamp.swift in Sources */,
 				633DBF9C2AD3CA6500F45A48 /* iOS_BootcampApp.swift in Sources */,
 				63DED95E2AD3CCE70057A584 /* GroupBootcamp.swift in Sources */,
+				63B916822AE23E5C0088C475 /* ActorsBootcamp.swift in Sources */,
 				63DED9682AD3CCE70057A584 /* DarkModeBootcamp.swift in Sources */,
 				63DED9502AD3CCE70057A584 /* ColorPickerBootcamp.swift in Sources */,
 				63DED9482AD3CCE70057A584 /* SheetBootcamp.swift in Sources */,

@@ -14,28 +14,28 @@ struct ButtonBootcamp: View {
         VStack(spacing: 32){
             Text(title)
             
-            Button("Press Me!"){
+            Button("Click Me!"){
                 self.title = "Button #1 Pressed"
             }
             
-            Button("I'm Plain, Press Me!"){
+            Button("I'm Plain, Click Me!"){
                 self.title = "Button #1.1 Pressed"
             }
             .buttonStyle(.plain)
             
-            Button("I'm borderd, ress Me!"){
+            Button("I'm borderd, Click Me!"){
                 self.title = "Button #1.2 Pressed"
             }
             .controlSize(.large)
             .buttonBorderShape(.capsule)
             .buttonStyle(.bordered)
             
-            Button("I'm borderedProminent, Press Me!"){
+            Button("I'm borderedProminent, Click Me!"){
                 self.title = "Button #1.3 Pressed"
             }
             .buttonStyle(.borderedProminent)
             
-            Button("I'm borderless, Press Me!"){
+            Button("I'm borderless, Click Me!"){
                 self.title = "Button #1.4 Pressed"
             }
             .buttonStyle(.borderless)
