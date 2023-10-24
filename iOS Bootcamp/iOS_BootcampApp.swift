@@ -14,9 +14,7 @@ struct iOS_BootcampApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                SearchableBootcamp()
-            }
+            DragGestureDragBootcamp()
 //            NavigationStack{
 //                TasksView()
 //            }

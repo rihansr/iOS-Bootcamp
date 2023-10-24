@@ -74,6 +74,7 @@
 		63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DED9442AD3CCE70057A584 /* IconBootcamp.swift */; };
 		63E74C6A2AE6322400DF7961 /* SearchableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E74C692AE6322400DF7961 /* SearchableBootcamp.swift */; };
 		63E9A91A2ADF9753004A7133 /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */; };
+		63F2E8B02AE782D0006060BC /* DragGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		63DED97A2AD404D00057A584 /* Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Classes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63E74C692AE6322400DF7961 /* SearchableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableBootcamp.swift; sourceTree = "<group>"; };
 		63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
+		63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */,
 				63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */,
 				63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */,
+				63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */,
 			);
 			path = IntermediateSwiftUI;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				63DED9562AD3CCE70057A584 /* AlertBootcamp.swift in Sources */,
 				63DED9462AD3CCE70057A584 /* CustomModelBootcamp.swift in Sources */,
 				63DED9602AD3CCE70057A584 /* BadgesBootcamp.swift in Sources */,
+				63F2E8B02AE782D0006060BC /* DragGestureBootcamp.swift in Sources */,
 				63DED9522AD3CCE70057A584 /* DatePickerBootcamp.swift in Sources */,
 				63CE08182AE68CC9001588FE /* MagnificationGestureBootcamp.swift in Sources */,
 				63B51F8A2AD69E75004FD296 /* TasksView.swift in Sources */,

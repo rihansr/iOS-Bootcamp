@@ -24,7 +24,7 @@ struct RotationGestureBootcamp: View {
                 }
                 .onEnded{ value in
                     withAnimation(.spring()){
-                        angle = Angle(degrees: 0)
+                        angle = .zero
                     }
                 }
             )
