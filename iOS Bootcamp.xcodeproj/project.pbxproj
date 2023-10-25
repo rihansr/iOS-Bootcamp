@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63051F4C2AE8E4AB00B0C64A /* MaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */; };
 		6316490F2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */; };
 		631F5FB12ADD272700768AEF /* AsyncPublisherBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */; };
 		631F5FB32ADD3AC000768AEF /* ProtocolsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskBootcamp.swift; sourceTree = "<group>"; };
 		6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsyncBootcamp.swift; sourceTree = "<group>"; };
 		631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherBootcamp.swift; sourceTree = "<group>"; };
 		631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsBootcamp.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */,
 				63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */,
 				63F2E8B52AE7D0C7006060BC /* MultipleSheetsBootcamp.swift */,
+				63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */,
 			);
 			path = IntermediateSwiftUI;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				63DED95D2AD3CCE70057A584 /* ViewModelBootcamp.swift in Sources */,
 				63B51F872AD69E75004FD296 /* AddView.swift in Sources */,
 				63E74C6A2AE6322400DF7961 /* SearchableBootcamp.swift in Sources */,
+				63051F4C2AE8E4AB00B0C64A /* MaskBootcamp.swift in Sources */,
 				63DED94B2AD3CCE70057A584 /* NavigationStackBootcamp.swift in Sources */,
 				63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */,
 				63DED9572AD3CCE70057A584 /* PickerBootcamp.swift in Sources */,

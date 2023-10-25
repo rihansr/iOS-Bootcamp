@@ -13,24 +13,29 @@ enum CuisineOption: String {
 
 actor SearchableDataManager {
     func fetchData() async throws -> [Restaurant]{
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-        return [
-            Restaurant(id: UUID().uuidString, title: "Burger Shack", cuisine: .american),
-            Restaurant(id: UUID().uuidString, title: "Pasta Palace", cuisine: .italian),
-            Restaurant(id: UUID().uuidString, title: "Sushi Heaven", cuisine: .japanese),
-            Restaurant(id: UUID().uuidString, title: "The Taco Bell", cuisine: .maxican),
-            Restaurant(id: UUID().uuidString, title: "Local Market", cuisine: .chinese),
-        ].shuffled()
+        do {
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            return [
+                Restaurant(id: UUID().uuidString, title: "Burger Shack", cuisine: .american),
+                Restaurant(id: UUID().uuidString, title: "Pasta Palace", cuisine: .italian),
+                Restaurant(id: UUID().uuidString, title: "Sushi Heaven", cuisine: .japanese),
+                Restaurant(id: UUID().uuidString, title: "The Taco Bell", cuisine: .maxican),
+                Restaurant(id: UUID().uuidString, title: "Local Market", cuisine: .chinese),
+            ].shuffled()
+        } catch {
+            throw error
+        }
     }
 }
 
 @MainActor
 final class SearchableViewModel: ObservableObject{
-    @Published private(set) var restaurants: [Restaurant] = []
+    @Published private var restaurants: [Restaurant] = []
     @Published private(set) var filteredRestaurants: [Restaurant] = []
     @Published var searchText: String = ""
+    @Published private(set) var searchScopes: [SearchCuisineOption] = []
     @Published var searchScope: SearchCuisineOption = .all
-    @Published var searchScopes: [SearchCuisineOption] = []
+    
     private let manager = SearchableDataManager()
     private var cancelables = Set<AnyCancellable>()
     
@@ -38,7 +43,7 @@ final class SearchableViewModel: ObservableObject{
         addSubscribers()
     }
     
-    func addSubscribers(){
+    private func addSubscribers(){
         $searchText
             .combineLatest($searchScope)
             .debounce(for: 0.3, scheduler: DispatchQueue.main)
@@ -52,7 +57,7 @@ final class SearchableViewModel: ObservableObject{
         !searchText.isEmpty
     }
     
-    func filterRestaurants(searchBy: String, scope: SearchCuisineOption) {
+    private func filterRestaurants(searchBy: String, scope: SearchCuisineOption) {
         guard !searchBy.isEmpty else {
             filteredRestaurants = restaurants
             searchScope = .all
@@ -95,7 +100,7 @@ final class SearchableViewModel: ObservableObject{
         guard searchText.count < 3 else {
             return suggestions
         }
-       
+        
         suggestions.append(contentsOf: restaurants.filter({
             return $0.title.lowercased().contains(searchText.lowercased())
         }))
@@ -105,12 +110,12 @@ final class SearchableViewModel: ObservableObject{
     
     func getRestaurants() async {
         do{
-            self.restaurants = try await self.manager.fetchData()
-            self.filteredRestaurants = self.restaurants
+            restaurants = try await manager.fetchData()
+            filteredRestaurants = restaurants
             
             let allCuisines = Set(restaurants.map({$0.cuisine}))
             
-            self.searchScopes = [.all] + allCuisines.map({SearchCuisineOption.cuisine(option: $0)})
+            searchScopes = [.all] + allCuisines.map({SearchCuisineOption.cuisine(option: $0)})
         }
         catch {
             print(error)
@@ -148,12 +153,11 @@ struct SearchableBootcamp: View {
             }
         }
         .padding(.all)
-        .navigationTitle("Restaurants")
         .searchable(text: $viewmodel.searchText, placement: .automatic, prompt: "Search...")
         .searchScopes($viewmodel.searchScope){
-                ForEach(viewmodel.searchScopes, id: \.self){
-                    Text($0.title)
-                        .tag($0)
+            ForEach(viewmodel.searchScopes, id: \.self){
+                Text($0.title)
+                    .tag($0)
             }
         }
         .searchSuggestions{
@@ -161,7 +165,7 @@ struct SearchableBootcamp: View {
                 Text($0)
                     .searchCompletion($0)
             }
-            ForEach(viewmodel.getRestaurantSuggestions(), id: \.self){ restaurant in
+            ForEach(viewmodel.getRestaurantSuggestions()){ restaurant in
                 NavigationLink(value: restaurant) {
                     Text(restaurant.title)
                 }
@@ -173,7 +177,9 @@ struct SearchableBootcamp: View {
         .task {
             await viewmodel.getRestaurants()
         }
-        .navigationDestination(for: Restaurant.self) { Text($0.title)
+        .navigationTitle("Restaurants")
+        .navigationDestination(for: Restaurant.self) {
+            Text($0.title)
         }
     }
     
