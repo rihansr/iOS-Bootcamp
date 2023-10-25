@@ -10,6 +10,7 @@
 		63051F4C2AE8E4AB00B0C64A /* MaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */; };
 		63051F4E2AE8EA3900B0C64A /* SoundsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63051F4D2AE8EA3900B0C64A /* SoundsBootcamp.swift */; };
 		63051F512AE8F38000B0C64A /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63051F502AE8F38000B0C64A /* tada.mp3 */; };
+		63051F532AE8FAAC00B0C64A /* HapticBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63051F522AE8FAAC00B0C64A /* HapticBootcamp.swift */; };
 		6316490F2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */; };
 		631F5FB12ADD272700768AEF /* AsyncPublisherBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */; };
 		631F5FB32ADD3AC000768AEF /* ProtocolsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */; };
@@ -87,6 +88,7 @@
 		63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskBootcamp.swift; sourceTree = "<group>"; };
 		63051F4D2AE8EA3900B0C64A /* SoundsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsBootcamp.swift; sourceTree = "<group>"; };
 		63051F502AE8F38000B0C64A /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tada.mp3; sourceTree = "<group>"; };
+		63051F522AE8FAAC00B0C64A /* HapticBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticBootcamp.swift; sourceTree = "<group>"; };
 		6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsyncBootcamp.swift; sourceTree = "<group>"; };
 		631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherBootcamp.swift; sourceTree = "<group>"; };
 		631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsBootcamp.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				63F2E8B52AE7D0C7006060BC /* MultipleSheetsBootcamp.swift */,
 				63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */,
 				63051F4D2AE8EA3900B0C64A /* SoundsBootcamp.swift */,
+				63051F522AE8FAAC00B0C64A /* HapticBootcamp.swift */,
 			);
 			path = IntermediateSwiftUI;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				63DED9672AD3CCE70057A584 /* TextFieldBootcamp.swift in Sources */,
 				63DED94D2AD3CCE70057A584 /* FrameBootcamp.swift in Sources */,
 				63DED96B2AD3CCE70057A584 /* ActionSheetBootcamp.swift in Sources */,
+				63051F532AE8FAAC00B0C64A /* HapticBootcamp.swift in Sources */,
 				63DED96C2AD3CCE70057A584 /* AsyncImageBootcamp.swift in Sources */,
 				63B51F862AD69E75004FD296 /* TaskViewModel.swift in Sources */,
 				63E9A91A2ADF9753004A7133 /* StructClassActorBootcamp.swift in Sources */,
