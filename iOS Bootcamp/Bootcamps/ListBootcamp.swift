@@ -74,8 +74,8 @@ struct ListBootcamp: View {
         fruits.remove(atOffsets: indexSet)
     }
     
-    func move(indices: IndexSet, newOffset: Int){
-        fruits.move(fromOffsets: indices, toOffset: newOffset)
+    func move(indices: IndexSet, destination: Int){
+        fruits.move(fromOffsets: indices, toOffset: destination)
     }
     
     func add(){

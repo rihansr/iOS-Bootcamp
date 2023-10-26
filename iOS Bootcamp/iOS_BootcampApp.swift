@@ -14,7 +14,8 @@ struct iOS_BootcampApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LocalNotificationBootcamp()
+            CoreDataBootcamp()
+
 //            NavigationStack{
 //                TasksView()
 //            }

@@ -16,16 +16,16 @@ struct AnimationTimingBootcamp: View {
             Button("Press Me!!"){
                 isAnimating.toggle()
             }
-            Item(isAnimating : isAnimating, animation: Animation.default)
-            Item(isAnimating : isAnimating, animation: .spring(
+            AnimationItem(isAnimating : isAnimating, animation: Animation.default)
+            AnimationItem(isAnimating : isAnimating, animation: .spring(
                 response: 0.5,
                 dampingFraction: 0.7,
                 blendDuration: 1.0
             ))
-            Item(isAnimating : isAnimating, animation: Animation.linear(duration: timing))
-            Item(isAnimating : isAnimating, animation: Animation.easeIn(duration: timing))
-            Item(isAnimating : isAnimating, animation: Animation.easeInOut(duration: timing))
-            Item(isAnimating : isAnimating, animation: Animation.easeIn(duration: timing))
+            AnimationItem(isAnimating : isAnimating, animation: Animation.linear(duration: timing))
+            AnimationItem(isAnimating : isAnimating, animation: Animation.easeIn(duration: timing))
+            AnimationItem(isAnimating : isAnimating, animation: Animation.easeInOut(duration: timing))
+            AnimationItem(isAnimating : isAnimating, animation: Animation.easeIn(duration: timing))
         }
     }
     
@@ -38,7 +38,7 @@ struct AnimationTimingBootcamp_Previews: PreviewProvider {
 }
 
 
-struct Item : View {
+struct AnimationItem : View {
     let isAnimating: Bool
     let animation: Animation
     var body: some View{

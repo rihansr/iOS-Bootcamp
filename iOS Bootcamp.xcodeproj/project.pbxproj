@@ -30,6 +30,8 @@
 		63B51F8F2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */; };
 		63B916822AE23E5C0088C475 /* ActorsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */; };
 		63B916842AE2855A0088C475 /* SendableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B916832AE2855A0088C475 /* SendableBootcamp.swift */; };
+		63BC29B52AEA623F00ADC3BD /* CoreDataBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC29B42AEA623F00ADC3BD /* CoreDataBootcamp.swift */; };
+		63BC29B82AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63BC29B62AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld */; };
 		63C8D2262ADE447D004CBE60 /* StrongSelfBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */; };
 		63C8D2282ADE59DA004CBE60 /* MVVMBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */; };
 		63C8D22A2ADE683E004CBE60 /* RefreshableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */; };
@@ -112,6 +114,8 @@
 		63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrowsBootcamp.swift; sourceTree = "<group>"; };
 		63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsBootcamp.swift; sourceTree = "<group>"; };
 		63B916832AE2855A0088C475 /* SendableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableBootcamp.swift; sourceTree = "<group>"; };
+		63BC29B42AEA623F00ADC3BD /* CoreDataBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBootcamp.swift; sourceTree = "<group>"; };
+		63BC29B72AEA68B600ADC3BD /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
 		63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ArraysSetsDics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSelfBootcamp.swift; sourceTree = "<group>"; };
 		63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBootcamp.swift; sourceTree = "<group>"; };
@@ -317,6 +321,8 @@
 				63051F542AE913AD00B0C64A /* LocalNotificationBootcamp.swift */,
 				63051F562AE9259200B0C64A /* HashableBootcamp.swift */,
 				6329B1302AEA23710084C77B /* SortFilterMapBootcamp.swift */,
+				63BC29B42AEA623F00ADC3BD /* CoreDataBootcamp.swift */,
+				63BC29B62AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld */,
 			);
 			path = IntermediateSwiftUI;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				63C8D2282ADE59DA004CBE60 /* MVVMBootcamp.swift in Sources */,
 				631F5FB32ADD3AC000768AEF /* ProtocolsBootcamp.swift in Sources */,
 				63DED9622AD3CCE70057A584 /* StacksBootcamp.swift in Sources */,
+				63BC29B82AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld in Sources */,
 				63DED94E2AD3CCE70057A584 /* ToolbarBootcamp.swift in Sources */,
 				6316490F2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift in Sources */,
 				63CE081B2AE693F8001588FE /* RotationGestureBootcamp.swift in Sources */,
@@ -515,6 +522,7 @@
 				63B916842AE2855A0088C475 /* SendableBootcamp.swift in Sources */,
 				63C8D22C2ADE7B57004CBE60 /* PhotosPickerBootcamp.swift in Sources */,
 				63DED9552AD3CCE70057A584 /* SafeAreaBootcamp.swift in Sources */,
+				63BC29B52AEA623F00ADC3BD /* CoreDataBootcamp.swift in Sources */,
 				63DED94A2AD3CCE70057A584 /* ToggleBootcamp.swift in Sources */,
 				63B51F892AD69E75004FD296 /* NoTasksView.swift in Sources */,
 				63DED9452AD3CCE70057A584 /* ContextMenuBootcamp.swift in Sources */,
@@ -731,6 +739,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63BC29B62AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63BC29B72AEA68B600ADC3BD /* CoreDataContainer.xcdatamodel */,
+			);
+			currentVersion = 63BC29B72AEA68B600ADC3BD /* CoreDataContainer.xcdatamodel */;
+			path = CoreDataContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 633DBF902AD3CA6500F45A48 /* Project object */;
 }
