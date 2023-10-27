@@ -171,10 +171,10 @@
 		63DED9442AD3CCE70057A584 /* IconBootcamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconBootcamp.swift; sourceTree = "<group>"; };
 		63DED9772AD3EC5A0057A584 /* Structs.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Structs.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63DED9782AD3EC780057A584 /* Tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Tuples.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		63DED9792AD3F5DE0057A584 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63DED97A2AD404D00057A584 /* Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Classes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63E74C692AE6322400DF7961 /* SearchableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableBootcamp.swift; sourceTree = "<group>"; };
 		63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
+		63ED101F2AEB723400682015 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureBootcamp.swift; sourceTree = "<group>"; };
 		63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReaderBootcamp.swift; sourceTree = "<group>"; };
 		63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderBootcamp.swift; sourceTree = "<group>"; };
@@ -290,17 +290,17 @@
 		63B51F8D2AD6A0D6004FD296 /* SwiftConcurrency */ = {
 			isa = PBXGroup;
 			children = (
+				63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */,
+				631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */,
 				63B51F8E2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift */,
 				6316490E2AD7F3F400C3E8FE /* DownloadImageAsyncBootcamp.swift */,
-				63B916812AE23E5C0088C475 /* ActorsBootcamp.swift */,
-				63B916832AE2855A0088C475 /* SendableBootcamp.swift */,
-				631F5FB02ADD272700768AEF /* AsyncPublisherBootcamp.swift */,
-				63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */,
 				63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */,
-				63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */,
 				63C8D22B2ADE7B57004CBE60 /* PhotosPickerBootcamp.swift */,
-				63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */,
+				63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */,
 				63E74C692AE6322400DF7961 /* SearchableBootcamp.swift */,
+				63B916832AE2855A0088C475 /* SendableBootcamp.swift */,
+				63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */,
+				63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -308,21 +308,21 @@
 		63CE08142AE67AF6001588FE /* IntermediateSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */,
-				63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */,
-				63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */,
-				63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */,
-				63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */,
-				63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */,
-				63F2E8B52AE7D0C7006060BC /* MultipleSheetsBootcamp.swift */,
-				63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */,
-				63051F4D2AE8EA3900B0C64A /* SoundsBootcamp.swift */,
-				63051F522AE8FAAC00B0C64A /* HapticBootcamp.swift */,
-				63051F542AE913AD00B0C64A /* LocalNotificationBootcamp.swift */,
-				63051F562AE9259200B0C64A /* HashableBootcamp.swift */,
-				6329B1302AEA23710084C77B /* SortFilterMapBootcamp.swift */,
 				63BC29B42AEA623F00ADC3BD /* CoreDataBootcamp.swift */,
 				63BC29B62AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld */,
+				63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */,
+				63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */,
+				63051F522AE8FAAC00B0C64A /* HapticBootcamp.swift */,
+				63051F562AE9259200B0C64A /* HashableBootcamp.swift */,
+				63051F542AE913AD00B0C64A /* LocalNotificationBootcamp.swift */,
+				63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */,
+				63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */,
+				63051F4B2AE8E4AB00B0C64A /* MaskBootcamp.swift */,
+				63F2E8B52AE7D0C7006060BC /* MultipleSheetsBootcamp.swift */,
+				63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */,
+				63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */,
+				6329B1302AEA23710084C77B /* SortFilterMapBootcamp.swift */,
+				63051F4D2AE8EA3900B0C64A /* SoundsBootcamp.swift */,
 			);
 			path = IntermediateSwiftUI;
 			sourceTree = "<group>";
@@ -330,48 +330,48 @@
 		63DED91A2AD3CCE70057A584 /* Bootcamps */ = {
 			isa = PBXGroup;
 			children = (
+				63DED9412AD3CCE70057A584 /* ActionSheetBootcamp.swift */,
+				63DED92C2AD3CCE70057A584 /* AlertBootcamp.swift */,
+				63DED93B2AD3CCE70057A584 /* AnimationBootcamp.swift */,
+				63DED93F2AD3CCE70057A584 /* AnimationTimingBootcamp.swift */,
+				63DED9352AD3CCE70057A584 /* AppStorageBootcamp.swift */,
+				63DED9422AD3CCE70057A584 /* AsyncImageBootcamp.swift */,
+				63DED9362AD3CCE70057A584 /* BadgesBootcamp.swift */,
+				63DED9302AD3CCE70057A584 /* ButtonBootcamp.swift */,
+				63DED9262AD3CCE70057A584 /* ColorPickerBootcamp.swift */,
 				63DED91B2AD3CCE70057A584 /* ContextMenuBootcamp.swift */,
 				63DED91C2AD3CCE70057A584 /* CustomModelBootcamp.swift */,
-				63DED91D2AD3CCE70057A584 /* TextBootcamp.swift */,
-				63DED91E2AD3CCE70057A584 /* SheetBootcamp.swift */,
-				63DED91F2AD3CCE70057A584 /* ListBootcamp.swift */,
-				63DED9202AD3CCE70057A584 /* ToggleBootcamp.swift */,
-				63DED9212AD3CCE70057A584 /* NavigationStackBootcamp.swift */,
-				63DED9222AD3CCE70057A584 /* GridViewBootcamp.swift */,
-				63DED9232AD3CCE70057A584 /* FrameBootcamp.swift */,
-				63DED9242AD3CCE70057A584 /* ToolbarBootcamp.swift */,
-				63DED9252AD3CCE70057A584 /* DocumentationBootcamp.swift */,
-				63DED9262AD3CCE70057A584 /* ColorPickerBootcamp.swift */,
-				63DED9272AD3CCE70057A584 /* EnvironmentObjectBootcamp.swift */,
+				63DED93E2AD3CCE70057A584 /* DarkModeBootcamp.swift */,
 				63DED9282AD3CCE70057A584 /* DatePickerBootcamp.swift */,
-				63DED9292AD3CCE70057A584 /* SafeAreaInsetsBootcamp.swift */,
-				63DED92A2AD3CCE70057A584 /* NavigationViewBootcamp.swift */,
-				63DED92B2AD3CCE70057A584 /* SafeAreaBootcamp.swift */,
-				63DED92C2AD3CCE70057A584 /* AlertBootcamp.swift */,
-				63DED92D2AD3CCE70057A584 /* PickerBootcamp.swift */,
-				63DED92E2AD3CCE70057A584 /* OnAppearBootcamp.swift */,
+				63DED9252AD3CCE70057A584 /* DocumentationBootcamp.swift */,
+				63DED9272AD3CCE70057A584 /* EnvironmentObjectBootcamp.swift */,
+				63DED9232AD3CCE70057A584 /* FrameBootcamp.swift */,
 				63DED92F2AD3CCE70057A584 /* ExtractSubviewsBootcamp.swift */,
-				63DED9302AD3CCE70057A584 /* ButtonBootcamp.swift */,
-				63DED9312AD3CCE70057A584 /* ShapesBootcamp.swift */,
-				63DED9322AD3CCE70057A584 /* ListViewBootcamp.swift */,
-				63DED9332AD3CCE70057A584 /* ViewModelBootcamp.swift */,
+				63DED9222AD3CCE70057A584 /* GridViewBootcamp.swift */,
 				63DED9342AD3CCE70057A584 /* GroupBootcamp.swift */,
-				63DED9352AD3CCE70057A584 /* AppStorageBootcamp.swift */,
-				63DED9362AD3CCE70057A584 /* BadgesBootcamp.swift */,
+				63DED9442AD3CCE70057A584 /* IconBootcamp.swift */,
 				63DED9372AD3CCE70057A584 /* ImageBootcamp.swift */,
+				63DED93A2AD3CCE70057A584 /* IfLetGuardBootcamp.swift */,
+				63DED91F2AD3CCE70057A584 /* ListBootcamp.swift */,
+				63DED9322AD3CCE70057A584 /* ListViewBootcamp.swift */,
+				63DED9212AD3CCE70057A584 /* NavigationStackBootcamp.swift */,
+				63DED92A2AD3CCE70057A584 /* NavigationViewBootcamp.swift */,
+				63DED92E2AD3CCE70057A584 /* OnAppearBootcamp.swift */,
+				63DED92D2AD3CCE70057A584 /* PickerBootcamp.swift */,
+				63DED91E2AD3CCE70057A584 /* SheetBootcamp.swift */,
+				63DED9292AD3CCE70057A584 /* SafeAreaInsetsBootcamp.swift */,
+				63DED92B2AD3CCE70057A584 /* SafeAreaBootcamp.swift */,
+				63DED9312AD3CCE70057A584 /* ShapesBootcamp.swift */,
 				63DED9382AD3CCE70057A584 /* StacksBootcamp.swift */,
 				63DED9392AD3CCE70057A584 /* StepperBootcamp.swift */,
-				63DED93A2AD3CCE70057A584 /* IfLetGuardBootcamp.swift */,
-				63DED93B2AD3CCE70057A584 /* AnimationBootcamp.swift */,
-				63DED93C2AD3CCE70057A584 /* TransitionAnimationBootcamp.swift */,
-				63DED93D2AD3CCE70057A584 /* TextFieldBootcamp.swift */,
-				63DED93E2AD3CCE70057A584 /* DarkModeBootcamp.swift */,
-				63DED93F2AD3CCE70057A584 /* AnimationTimingBootcamp.swift */,
 				63DED9402AD3CCE70057A584 /* SliderBootcamp.swift */,
-				63DED9412AD3CCE70057A584 /* ActionSheetBootcamp.swift */,
-				63DED9422AD3CCE70057A584 /* AsyncImageBootcamp.swift */,
 				63DED9432AD3CCE70057A584 /* TabViewBootcamp.swift */,
-				63DED9442AD3CCE70057A584 /* IconBootcamp.swift */,
+				63DED91D2AD3CCE70057A584 /* TextBootcamp.swift */,
+				63DED93D2AD3CCE70057A584 /* TextFieldBootcamp.swift */,
+				63DED9202AD3CCE70057A584 /* ToggleBootcamp.swift */,
+				63DED9242AD3CCE70057A584 /* ToolbarBootcamp.swift */,
+				63DED93C2AD3CCE70057A584 /* TransitionAnimationBootcamp.swift */,
+				63DED9332AD3CCE70057A584 /* ViewModelBootcamp.swift */,
 			);
 			path = Bootcamps;
 			sourceTree = "<group>";
@@ -379,14 +379,14 @@
 		63DED9762AD3EC390057A584 /* SwiftBasics */ = {
 			isa = PBXGroup;
 			children = (
-				63DED9772AD3EC5A0057A584 /* Structs.playground */,
-				63DED9782AD3EC780057A584 /* Tuples.playground */,
-				63DED9792AD3F5DE0057A584 /* Enums.playground */,
-				63DED97A2AD404D00057A584 /* Classes.playground */,
 				63BE59692AD5040A000A2DF0 /* ArraysSetsDics.playground */,
+				63DED97A2AD404D00057A584 /* Classes.playground */,
+				63ED101F2AEB723400682015 /* Enums.playground */,
+				63CAFF9D2AD6858F0081E35C /* FilterSortMap.playground */,
 				63CAFF9B2AD65D1B0081E35C /* Loops.playground */,
 				63CAFF9C2AD664900081E35C /* Statements.playground */,
-				63CAFF9D2AD6858F0081E35C /* FilterSortMap.playground */,
+				63DED9772AD3EC5A0057A584 /* Structs.playground */,
+				63DED9782AD3EC780057A584 /* Tuples.playground */,
 			);
 			path = SwiftBasics;
 			sourceTree = "<group>";
