@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import CoreData
 
 class CoreDataManager{
@@ -24,11 +25,14 @@ class CoreDataManager{
         context = container.viewContext
     }
     
-    func fetch<T>(name: String) -> [T] where T : NSFetchRequestResult{
+    func fetch<T>(name: String, sortBy: [NSSortDescriptor]? = [], filterBy: NSPredicate? = nil) -> [T] where T : NSFetchRequestResult{
         do {
-            return try context.fetch(NSFetchRequest(entityName: name))
+            let request = NSFetchRequest<T>(entityName: name)
+            request.sortDescriptors = sortBy
+            request.predicate = filterBy
+            return try context.fetch(request)
         } catch let error {
-            print("Saving Error: \(error)")
+            print("Fetching Error: \(error)")
             return []
         }
     }
@@ -46,13 +50,20 @@ enum FilterOption: String, CaseIterable {
     case business, department, employee
 }
 
+enum SortOption: String, CaseIterable {
+    case ascending, descending
+}
+
 class CoreDataRelationshipsViewModel: ObservableObject {
     
     let manager = CoreDataManager.instance
     @Published var selectedOption:FilterOption = .business
+    @Published var sortingOption:SortOption = .descending
     @Published var selectedBusinesses: [BusinessEntity] = []
     @Published var selectedDepartments: [DepartmentEntity] = []
-    @Published var selectedEmployee: EmployeeEntity?
+    @Published var selectedEmployees: [EmployeeEntity] = []
+    private var cancelables = Set<AnyCancellable>()
+    @Published var sortBy:[FilterOption: String] = [:]
     
     @Published var text: String = ""
     
@@ -62,12 +73,36 @@ class CoreDataRelationshipsViewModel: ObservableObject {
     
     init(){
         fetch()
+        $selectedOption.sink { [weak self] option in
+            self?.reset()
+        }
+        .store(in: &cancelables)
+        
+        $sortingOption.sink { [weak self] option in
+            self?.fetch()
+        }
+        .store(in: &cancelables)
     }
     
     func fetch(){
-        businesses = manager.fetch(name: "BusinessEntity")
-        departments = manager.fetch(name: "DepartmentEntity")
-        employees = manager.fetch(name: "EmployeeEntity")
+        businesses = manager.fetch(
+            name: "BusinessEntity",
+            sortBy: [
+                NSSortDescriptor(keyPath:\BusinessEntity.name, ascending: true)
+            ]
+        )
+        departments = manager.fetch(
+            name: "DepartmentEntity",
+            sortBy: [
+                NSSortDescriptor(keyPath:\DepartmentEntity.name, ascending: true)
+            ]
+        )
+        employees = manager.fetch(
+            name: "EmployeeEntity",
+            sortBy: [
+                NSSortDescriptor(keyPath:\EmployeeEntity.name, ascending: true)
+            ]
+        )
     }
     
     func add(){
@@ -79,8 +114,8 @@ class CoreDataRelationshipsViewModel: ObservableObject {
             if !selectedDepartments.isEmpty {
                 business.departments = Set(selectedDepartments) as NSSet
             }
-            if let employee = selectedEmployee {
-                business.addToEmployees(employee)
+            if !selectedEmployees.isEmpty {
+                business.employees = Set(selectedEmployees) as NSSet
             }
             break
         case .department:
@@ -89,8 +124,8 @@ class CoreDataRelationshipsViewModel: ObservableObject {
             if !selectedBusinesses.isEmpty {
                 department.businesses = Set(selectedBusinesses) as NSSet
             }
-            if let employee = selectedEmployee {
-                department.addToEmployees(employee)
+            if !selectedEmployees.isEmpty {
+                department.employees = Set(selectedEmployees) as NSSet
             }
             break
         case .employee:
@@ -106,9 +141,7 @@ class CoreDataRelationshipsViewModel: ObservableObject {
         }
         save()
         text = ""
-        selectedBusinesses = []
-        selectedDepartments = []
-        selectedEmployee = nil
+        reset()
     }
     
     func delete(item: NSManagedObject){
@@ -116,9 +149,52 @@ class CoreDataRelationshipsViewModel: ObservableObject {
         save()
     }
     
+    private func selectedIndex<T: NSFetchRequestResult>(entities: [T], entity: T) -> Int? {
+        if let index = entities.firstIndex(where: { _entity in
+            entity.isEqual(_entity)
+        }){
+            return index
+        }
+        else {
+            return nil
+        }
+    }
+    
+    func onSelect<T: NSFetchRequestResult>(entities: inout [T], entity: T){
+        if let index = selectedIndex(entities: entities, entity: entity){
+            entities.remove(at: index)
+        }
+        else{
+            switch selectedOption {
+            case .employee:
+                entities = [entity]
+                break
+            default:
+                entities.append(entity)
+            }
+        }
+    }
+    
     func save(){
         manager.save()
         fetch()
+    }
+    
+    func filter<T>(option: FilterOption, by: NSPredicate?) -> [T] where T: NSFetchRequestResult {
+        return manager.fetch(name: "\(option.rawValue.capitalized)Entity", filterBy: by)
+    }
+    
+    func filterDepartments(item: BusinessEntity?) -> [DepartmentEntity]{
+        guard let item = item else { return departments }
+        //let predicate = NSPredicate(format: "name == %@", "IT")
+        let predicate = NSPredicate(format: "ANY businesses == %@", item)
+        return filter(option: .department, by: predicate)
+    }
+    
+    func reset(){
+        selectedBusinesses = []
+        selectedDepartments = []
+        selectedEmployees = []
     }
 }
 
@@ -131,22 +207,38 @@ struct CoreDataRelationshipsBootcamp: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 20){
                     VStack(alignment: .leading, spacing: 2) {
-                        Picker(
-                            selection: $viewmodel.selectedOption,
-                            label: Text(viewmodel.selectedOption.rawValue),
-                            content: {
-                                ForEach(FilterOption.allCases, id: \.self){
-                                    Text($0.rawValue.capitalized).tag($0)
+                        HStack{
+                            Picker(
+                                selection: $viewmodel.selectedOption,
+                                label: Text(viewmodel.selectedOption.rawValue),
+                                content: {
+                                    ForEach(FilterOption.allCases, id: \.self){
+                                        Text($0.rawValue.capitalized).tag($0)
+                                    }
                                 }
-                            }
-                        )
-                        .padding(.horizontal, 6)
+                            )
+                            .padding(.horizontal, 6)
+                            Spacer()
+                            Picker(
+                                selection: $viewmodel.sortingOption,
+                                label: Text(viewmodel.sortingOption.rawValue),
+                                content: {
+                                    ForEach(SortOption.allCases, id: \.self){
+                                        Text($0.rawValue.capitalized).tag($0)
+                                    }
+                                }
+                            )
+                            .padding(.horizontal, 6)
+                        }
                         
                         HStack {
                             TextField("Type here...", text: $viewmodel.text)
                                 .padding()
                                 .background(Color.gray.opacity(0.15))
                                 .cornerRadius(6)
+                                .onSubmit {
+                                    viewmodel.add()
+                                }
                             
                             Button {
                                 viewmodel.add()
@@ -212,21 +304,10 @@ struct CoreDataRelationshipsBootcamp: View {
 
 extension CoreDataRelationshipsBootcamp {
     func businessItemView(item: BusinessEntity) -> some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 0){
             Button {
-                if viewmodel.selectedBusinesses.contains(item){
-                    if let index = viewmodel.selectedBusinesses.firstIndex(of: item){
-                        viewmodel.selectedBusinesses.remove(at: index)
-                    }
-                }
-                else {
-                    switch viewmodel.selectedOption {
-                    case .employee:
-                        viewmodel.selectedBusinesses = [item]
-                        break
-                    default:
-                        viewmodel.selectedBusinesses.append(item)
-                    }
+                if(viewmodel.selectedOption != .business){
+                        viewmodel.onSelect(entities: &viewmodel.selectedBusinesses, entity: item)
                 }
             } label: { label(name: item.name) }
             
@@ -245,7 +326,12 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let departments = item.departments?.allObjects as? [DepartmentEntity] {
-                        ForEach(departments) { Text($0.name ?? "").font(.caption) }
+                        ForEach(departments) { department in
+                            removeLabel(name: department.name ?? "") {
+                                item.removeFromDepartments(department)
+                                viewmodel.save()
+                            }
+                        }
                     }
                 }
                 Section(
@@ -254,6 +340,7 @@ extension CoreDataRelationshipsBootcamp {
                             ForEach(viewmodel.employees){ employee in
                                 Button(employee.name ?? ""){
                                     item.addToEmployees(employee)
+                                    employee.department = nil
                                     viewmodel.save()
                                 }
                             }
@@ -262,11 +349,20 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let employees = item.employees?.allObjects as? [EmployeeEntity]{
-                        ForEach(employees) { Text($0.name ?? "").font(.caption) }
+                        ForEach(employees) { employee in
+                            removeLabel(name: employee.name ?? "") {
+                                employee.business = nil
+                                employee.department = nil
+                                viewmodel.save()
+                            }
+                        }
                     }
                 }
             }
             .listStyle(GroupedListStyle())
+            Button {
+                viewmodel.delete(item: item)
+            } label: { deleteLabel() }
         }
         .frame(width: 216, height: 324, alignment: .leading)
         .background(background(for: viewmodel.selectedBusinesses.contains(item)).opacity(0.25))
@@ -274,21 +370,10 @@ extension CoreDataRelationshipsBootcamp {
     }
     
     func departmentItemView(item: DepartmentEntity) -> some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 0){
             Button {
-                if viewmodel.selectedDepartments.contains(item){
-                    if let index = viewmodel.selectedDepartments.firstIndex(of: item){
-                        viewmodel.selectedDepartments.remove(at: index)
-                    }
-                }
-                else {
-                    switch viewmodel.selectedOption {
-                    case .employee:
-                        viewmodel.selectedDepartments = [item]
-                        break
-                    default:
-                        viewmodel.selectedDepartments.append(item)
-                    }
+                if(viewmodel.selectedOption != .department){
+                    viewmodel.onSelect(entities: &viewmodel.selectedDepartments, entity: item)
                 }
             } label: { label(name: item.name) }
             
@@ -307,7 +392,12 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let businesses = item.businesses?.allObjects as? [BusinessEntity]{
-                        ForEach(businesses) { Text($0.name ?? "").font(.caption) }
+                        ForEach(businesses) { business in
+                            removeLabel(name: business.name ?? "") {
+                                item.removeFromBusinesses(business)
+                                viewmodel.save()
+                            }
+                        }
                     }
                 }
                 Section(
@@ -324,12 +414,19 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let employees = item.employees?.allObjects as? [EmployeeEntity] {
-                        ForEach(employees) { Text($0.name ?? "").font(.caption) }
-                           
+                        ForEach(employees) { employee in
+                            removeLabel(name: employee.name ?? "") {
+                                employee.department = nil
+                                viewmodel.save()
+                            }
+                        }
                     }
                 }
             }
             .listStyle(GroupedListStyle())
+            Button {
+                viewmodel.delete(item: item)
+            } label: { deleteLabel() }
         }
         .frame(width: 216, height: 324, alignment: .leading)
         .background(background(for: viewmodel.selectedDepartments.contains(item)).opacity(0.25))
@@ -337,9 +434,11 @@ extension CoreDataRelationshipsBootcamp {
     }
     
     func employeeItemView(item: EmployeeEntity) -> some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 0){
             Button {
-                viewmodel.selectedEmployee = viewmodel.selectedEmployee == item ? nil : item
+                if(viewmodel.selectedOption != .employee){
+                    viewmodel.onSelect(entities: &viewmodel.selectedEmployees, entity: item)
+                }
             } label: { label(name: item.name) }
             
             List{
@@ -357,13 +456,19 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let business = item.business {
-                        Text(business.name ?? "").font(.caption)
+                        removeLabel(name: business.name ?? "") {
+                            item.business = nil
+                            item.department = nil
+                            viewmodel.save()
+                        }
                     }
                 }
                 Section(
                     header:
                         Menu {
-                            ForEach(viewmodel.departments){ department in
+                            let departments = viewmodel.filterDepartments(
+                                item: item.business)
+                            ForEach(departments){ department in
                                 Button(department.name ?? ""){
                                     item.department = department
                                     viewmodel.save()
@@ -374,24 +479,31 @@ extension CoreDataRelationshipsBootcamp {
                         }
                 ){
                     if let department = item.department {
-                        Text(department.name ?? "").font(.caption)
+                        removeLabel(name: department.name ?? "") {
+                            item.department = nil
+                            viewmodel.save()
+                        }
                     }
                 }
             }
             .listStyle(GroupedListStyle())
+            Button {
+                viewmodel.delete(item: item)
+            } label: { deleteLabel() }
         }
-        .frame(width: 216, height: 240, alignment: .leading)
-        .background(background(for: viewmodel.selectedEmployee == item).opacity(0.25))
-        .border(background(for: viewmodel.selectedEmployee == item), width: 0.5)
+        .frame(width: 216, height: 272, alignment: .leading)
+        .background(background(for: viewmodel.selectedEmployees.contains(item)).opacity(0.25))
+        .border(background(for: viewmodel.selectedEmployees.contains(item)), width: 0.5)
     }
-    
+}
+
+extension CoreDataRelationshipsBootcamp {
     func label(name:String?) -> some View {
         Text(name ?? "")
             .foregroundColor(.black)
             .font(.headline)
             .frame(maxWidth:.infinity, alignment: .center)
-            .padding(.top)
-            .padding(.horizontal)
+            .padding()
     }
     
     func addLabel(name:String) -> some View {
@@ -402,6 +514,28 @@ extension CoreDataRelationshipsBootcamp {
                 .font(.caption)
                 .foregroundColor(.gray)
         }
+    }
+    
+    func removeLabel(name:String, onTap: @escaping () -> Void) -> some View {
+        HStack(alignment: .center){
+            Text(name)
+                .font(.caption)
+            Spacer()
+            Image(systemName: "minus.circle")
+                .font(.subheadline)
+                .fontWeight(.light)
+                .foregroundColor(.gray)
+                .onTapGesture {
+                    onTap()
+                }
+        }
+    }
+    
+    func deleteLabel() -> some View {
+        Image(systemName: "xmark.bin.circle.fill")
+            .foregroundColor(.gray)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.all, 6)
     }
     
     func background(for isSelected: Bool) -> Color {
