@@ -55,3 +55,9 @@ struct BackgroundThreadBootcamp: View {
         }
     }
 }
+
+struct BackgroundThreadBootcamp_Previews: PreviewProvider {
+    static var previews: some View{
+        BackgroundThreadBootcamp()
+    }
+}
