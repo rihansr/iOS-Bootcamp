@@ -46,8 +46,19 @@ class CoreDataManager{
     }
 }
 
-enum FilterOption: String, CaseIterable {
+enum TypeOption: String, CaseIterable {
     case business, department, employee
+    
+    var entity: String {
+        switch self {
+        case .business:
+            return "BusinessEntity"
+        case .department:
+            return "DepartmentEntity"
+        case .employee:
+            return "EmployeeEntity"
+        }
+    }
 }
 
 enum SortOption: String, CaseIterable {
@@ -57,13 +68,13 @@ enum SortOption: String, CaseIterable {
 class CoreDataRelationshipsViewModel: ObservableObject {
     
     let manager = CoreDataManager.instance
-    @Published var selectedOption:FilterOption = .business
-    @Published var sortingOption:SortOption = .descending
+    @Published var selectedType:TypeOption = .business
+    @Published var selectedSoting:SortOption = .ascending
+    @Published var sortBy:[TypeOption:SortOption] = [:]
     @Published var selectedBusinesses: [BusinessEntity] = []
     @Published var selectedDepartments: [DepartmentEntity] = []
     @Published var selectedEmployees: [EmployeeEntity] = []
     private var cancelables = Set<AnyCancellable>()
-    @Published var sortBy:[FilterOption: String] = [:]
     
     @Published var text: String = ""
     
@@ -73,41 +84,41 @@ class CoreDataRelationshipsViewModel: ObservableObject {
     
     init(){
         fetch()
-        $selectedOption.sink { [weak self] option in
+        $selectedType
+            .dropFirst()
+            .debounce(for: 0.2, scheduler: DispatchQueue.main)
+            .sink { [weak self] option in
             self?.reset()
         }
         .store(in: &cancelables)
         
-        $sortingOption.sink { [weak self] option in
+        $sortBy
+            .dropFirst()
+            .debounce(for: 0.2, scheduler: DispatchQueue.main)
+            .sink { [weak self] option in
             self?.fetch()
         }
         .store(in: &cancelables)
     }
     
     func fetch(){
-        businesses = manager.fetch(
-            name: "BusinessEntity",
+        businesses = sort(type: .business, by: \BusinessEntity.name)
+        departments = sort(type: .department, by: \DepartmentEntity.name)
+        employees = sort(type: .employee, by: \EmployeeEntity.name)
+    }
+    
+    func sort<T: NSFetchRequestResult, Root, Value>(type: TypeOption, by: KeyPath<Root, Value>) -> [T]{
+        manager.fetch(
+            name: type.entity,
             sortBy: [
-                NSSortDescriptor(keyPath:\BusinessEntity.name, ascending: true)
-            ]
-        )
-        departments = manager.fetch(
-            name: "DepartmentEntity",
-            sortBy: [
-                NSSortDescriptor(keyPath:\DepartmentEntity.name, ascending: true)
-            ]
-        )
-        employees = manager.fetch(
-            name: "EmployeeEntity",
-            sortBy: [
-                NSSortDescriptor(keyPath:\EmployeeEntity.name, ascending: true)
+                NSSortDescriptor(keyPath: by, ascending: sortBy[type] == .ascending)
             ]
         )
     }
     
     func add(){
         guard !text.isEmpty else { return }
-        switch selectedOption {
+        switch selectedType {
         case .business:
             let business = BusinessEntity(context: manager.context)
             business.name = text
@@ -165,7 +176,7 @@ class CoreDataRelationshipsViewModel: ObservableObject {
             entities.remove(at: index)
         }
         else{
-            switch selectedOption {
+            switch selectedType {
             case .employee:
                 entities = [entity]
                 break
@@ -180,7 +191,7 @@ class CoreDataRelationshipsViewModel: ObservableObject {
         fetch()
     }
     
-    func filter<T>(option: FilterOption, by: NSPredicate?) -> [T] where T: NSFetchRequestResult {
+    func filter<T>(option: TypeOption, by: NSPredicate?) -> [T] where T: NSFetchRequestResult {
         return manager.fetch(name: "\(option.rawValue.capitalized)Entity", filterBy: by)
     }
     
@@ -207,30 +218,16 @@ struct CoreDataRelationshipsBootcamp: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 20){
                     VStack(alignment: .leading, spacing: 2) {
-                        HStack{
-                            Picker(
-                                selection: $viewmodel.selectedOption,
-                                label: Text(viewmodel.selectedOption.rawValue),
-                                content: {
-                                    ForEach(FilterOption.allCases, id: \.self){
-                                        Text($0.rawValue.capitalized).tag($0)
-                                    }
+                        Picker(
+                            selection: $viewmodel.selectedType,
+                            label: Text(viewmodel.selectedType.rawValue),
+                            content: {
+                                ForEach(TypeOption.allCases, id: \.self){
+                                    Text($0.rawValue.capitalized).tag($0)
                                 }
-                            )
-                            .padding(.horizontal, 6)
-                            Spacer()
-                            Picker(
-                                selection: $viewmodel.sortingOption,
-                                label: Text(viewmodel.sortingOption.rawValue),
-                                content: {
-                                    ForEach(SortOption.allCases, id: \.self){
-                                        Text($0.rawValue.capitalized).tag($0)
-                                    }
-                                }
-                            )
-                            .padding(.horizontal, 6)
-                        }
-                        
+                            }
+                        )
+                        .padding(.horizontal, 6)
                         HStack {
                             TextField("Type here...", text: $viewmodel.text)
                                 .padding()
@@ -256,9 +253,7 @@ struct CoreDataRelationshipsBootcamp: View {
                         .padding(.horizontal)
                     }
                     
-                    Label("BUSINESS'S", systemImage: "briefcase.fill")
-                        .padding(.top)
-                        .padding(.horizontal)
+                    sortLabel(label: "BUSINESS'S", icon: "briefcase.fill", type: .business)
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
@@ -269,9 +264,7 @@ struct CoreDataRelationshipsBootcamp: View {
                         .padding(.horizontal)
                     }
                     
-                    Label("DEPARTMENT'S", systemImage: "point.3.filled.connected.trianglepath.dotted")
-                        .padding(.top)
-                        .padding(.horizontal)
+                    sortLabel(label: "DEPARTMENT'S", icon: "point.3.filled.connected.trianglepath.dotted", type: .department)
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
@@ -282,9 +275,7 @@ struct CoreDataRelationshipsBootcamp: View {
                         .padding(.horizontal)
                     }
                     
-                    Label("EMPLOYEE'S", systemImage: "person.2.fill")
-                        .padding(.top)
-                        .padding(.horizontal)
+                    sortLabel(label: "EMPLOYEE'S", icon: "person.2.fill", type: .employee)
                     
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack {
@@ -306,7 +297,7 @@ extension CoreDataRelationshipsBootcamp {
     func businessItemView(item: BusinessEntity) -> some View {
         VStack(alignment: .leading, spacing: 0){
             Button {
-                if(viewmodel.selectedOption != .business){
+                if(viewmodel.selectedType != .business){
                         viewmodel.onSelect(entities: &viewmodel.selectedBusinesses, entity: item)
                 }
             } label: { label(name: item.name) }
@@ -372,7 +363,7 @@ extension CoreDataRelationshipsBootcamp {
     func departmentItemView(item: DepartmentEntity) -> some View {
         VStack(alignment: .leading, spacing: 0){
             Button {
-                if(viewmodel.selectedOption != .department){
+                if(viewmodel.selectedType != .department){
                     viewmodel.onSelect(entities: &viewmodel.selectedDepartments, entity: item)
                 }
             } label: { label(name: item.name) }
@@ -436,7 +427,7 @@ extension CoreDataRelationshipsBootcamp {
     func employeeItemView(item: EmployeeEntity) -> some View {
         VStack(alignment: .leading, spacing: 0){
             Button {
-                if(viewmodel.selectedOption != .employee){
+                if(viewmodel.selectedType != .employee){
                     viewmodel.onSelect(entities: &viewmodel.selectedEmployees, entity: item)
                 }
             } label: { label(name: item.name) }
@@ -504,6 +495,26 @@ extension CoreDataRelationshipsBootcamp {
             .font(.headline)
             .frame(maxWidth:.infinity, alignment: .center)
             .padding()
+    }
+    
+    func sortLabel(label: String, icon: String, type: TypeOption) -> some View {
+        HStack{
+            Label(label, systemImage: icon)
+            Spacer()
+            Menu {
+                ForEach(SortOption.allCases, id: \.self, content: {
+                    item in Button(item.rawValue.capitalized){
+                        viewmodel.sortBy[type] = item
+                    }
+                })
+            } label: {
+                Image(systemName: "rectangle.stack")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+        }
+            .padding(.top)
+            .padding(.horizontal)
     }
     
     func addLabel(name:String) -> some View {
