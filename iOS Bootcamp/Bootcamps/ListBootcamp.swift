@@ -60,7 +60,7 @@ struct ListBootcamp: View {
             //.listStyle(DefaultListStyle())
             //.listStyle(GroupedListStyle())
             //.listStyle(InsetGroupedListStyle())
-            .listStyle(SidebarListStyle())
+            //.listStyle(SidebarListStyle())
             .navigationTitle("Grocery List")
             .navigationBarItems(
                 leading: EditButton(),
