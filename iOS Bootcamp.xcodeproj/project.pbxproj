@@ -37,7 +37,8 @@
 		63C198052AF1053B00566A0D /* TypealiasBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C198042AF1053B00566A0D /* TypealiasBootcamp.swift */; };
 		63C198072AF10FCD00566A0D /* EscapingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C198062AF10FCD00566A0D /* EscapingBootcamp.swift */; };
 		63C839DD2AF217F800C239BF /* CodableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C839DC2AF217F800C239BF /* CodableBootcamp.swift */; };
-		63C839DF2AF221EB00C239BF /* DownloadWithEscapingBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C839DE2AF221EB00C239BF /* DownloadWithEscapingBootcamp.swift */; };
+		63C839DF2AF221EB00C239BF /* DownloadFromAPIBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C839DE2AF221EB00C239BF /* DownloadFromAPIBootcamp.swift */; };
+		63C839E12AF2524400C239BF /* DownloadWithCombineBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C839E02AF2524400C239BF /* DownloadWithCombineBootcamp.swift */; };
 		63C8D2262ADE447D004CBE60 /* StrongSelfBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */; };
 		63C8D2282ADE59DA004CBE60 /* MVVMBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */; };
 		63C8D22A2ADE683E004CBE60 /* RefreshableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */; };
@@ -129,7 +130,8 @@
 		63C198042AF1053B00566A0D /* TypealiasBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypealiasBootcamp.swift; sourceTree = "<group>"; };
 		63C198062AF10FCD00566A0D /* EscapingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapingBootcamp.swift; sourceTree = "<group>"; };
 		63C839DC2AF217F800C239BF /* CodableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBootcamp.swift; sourceTree = "<group>"; };
-		63C839DE2AF221EB00C239BF /* DownloadWithEscapingBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadWithEscapingBootcamp.swift; sourceTree = "<group>"; };
+		63C839DE2AF221EB00C239BF /* DownloadFromAPIBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFromAPIBootcamp.swift; sourceTree = "<group>"; };
+		63C839E02AF2524400C239BF /* DownloadWithCombineBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadWithCombineBootcamp.swift; sourceTree = "<group>"; };
 		63C8D2252ADE447D004CBE60 /* StrongSelfBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSelfBootcamp.swift; sourceTree = "<group>"; };
 		63C8D2272ADE59DA004CBE60 /* MVVMBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMBootcamp.swift; sourceTree = "<group>"; };
 		63C8D2292ADE683E004CBE60 /* RefreshableBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableBootcamp.swift; sourceTree = "<group>"; };
@@ -327,7 +329,8 @@
 				63BC29B42AEA623F00ADC3BD /* CoreDataBootcamp.swift */,
 				63ED10202AEB757500682015 /* CoreDataRelationshipsBootcamp.swift */,
 				63BC29B62AEA68B600ADC3BD /* CoreDataContainer.xcdatamodeld */,
-				63C839DE2AF221EB00C239BF /* DownloadWithEscapingBootcamp.swift */,
+				63C839DE2AF221EB00C239BF /* DownloadFromAPIBootcamp.swift */,
+				63C839E02AF2524400C239BF /* DownloadWithCombineBootcamp.swift */,
 				63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */,
 				63C198062AF10FCD00566A0D /* EscapingBootcamp.swift */,
 				63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */,
@@ -484,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C839DF2AF221EB00C239BF /* DownloadWithEscapingBootcamp.swift in Sources */,
+				63C839DF2AF221EB00C239BF /* DownloadFromAPIBootcamp.swift in Sources */,
 				63C198012AF0E8EC00566A0D /* BackgroundThreadBootcamp.swift in Sources */,
 				63DED9582AD3CCE70057A584 /* OnAppearBootcamp.swift in Sources */,
 				63DED95D2AD3CCE70057A584 /* ViewModelBootcamp.swift in Sources */,
@@ -494,6 +497,7 @@
 				63051F4C2AE8E4AB00B0C64A /* MaskBootcamp.swift in Sources */,
 				63DED94B2AD3CCE70057A584 /* NavigationStackBootcamp.swift in Sources */,
 				63DED96E2AD3CCE70057A584 /* IconBootcamp.swift in Sources */,
+				63C839E12AF2524400C239BF /* DownloadWithCombineBootcamp.swift in Sources */,
 				63DED9572AD3CCE70057A584 /* PickerBootcamp.swift in Sources */,
 				63B51F8C2AD69E75004FD296 /* TaskModel.swift in Sources */,
 				63DED9692AD3CCE70057A584 /* AnimationTimingBootcamp.swift in Sources */,
