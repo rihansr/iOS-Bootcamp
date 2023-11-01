@@ -14,7 +14,7 @@ struct iOS_BootcampApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WeakSelfBootcamp()
+            CodableBootcamp()
 
 //            NavigationStack{
 //                TasksView()
