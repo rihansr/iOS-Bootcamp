@@ -80,3 +80,13 @@ struct SheetBootcamp_Previews: PreviewProvider {
         SheetBootcamp()
     }
 }
+
+/*
+ struct SheetBootcamp_Previews: PreviewProvider {
+     @State static var selectedDetent:PresentationDetent = .medium
+
+     static var previews: some View {
+         SheetView(selectedDetent: $selectedDetent)
+     }
+ }
+*/
