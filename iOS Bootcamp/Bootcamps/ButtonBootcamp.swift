@@ -3,42 +3,80 @@
 //  FirstIOSProject
 //
 //  Created by Macuser on 18/09/2023.
-//
+//  Last modified by Macuser on 06/11/2023.
 
 import SwiftUI
+
+struct CustomPressableButtonStyle: ButtonStyle {
+    
+    let background: Color
+    
+    init(background: Color = .yellow){
+        self.background = background
+    }
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(.black)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            .background(background)
+            .cornerRadius(8)
+            .brightness(configuration.isPressed ? 0.05 : 0)
+            //.opacity(configuration.isPressed ? 0.8 : 1)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1)
+    }
+}
+
+extension View {
+    func customPressableButtonStyle(background: Color = .yellow) -> some View {
+        buttonStyle(CustomPressableButtonStyle(background: background))
+    }
+}
 
 struct ButtonBootcamp: View {
     @State var title: String = "This is my title"
     var body: some View {
         
-        VStack(spacing: 32){
+        VStack(alignment: .center, spacing: 24){
             Text(title)
             
-            Button("Click Me!"){
-                self.title = "Button #1 Pressed"
+            Group{
+                Button("Click Me!"){
+                    self.title = "Button #1 Pressed"
+                }
+                
+                Button("I'm Plain, Click Me!"){
+                    self.title = "Button #1.1 Pressed"
+                }
+                .buttonStyle(.plain)
+                
+                Button("I'm borderd, Click Me!"){
+                    self.title = "Button #1.2 Pressed"
+                }
+                .controlSize(.large)
+                .buttonBorderShape(.capsule)
+                .buttonStyle(.bordered)
+                
+                Button("I'm borderedProminent, Click Me!"){
+                    self.title = "Button #1.3 Pressed"
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("I'm borderless, Click Me!"){
+                    self.title = "Button #1.4 Pressed"
+                }
+                .buttonStyle(.borderless)
+                
+                Button {
+                    self.title = "Button #1.5 Pressed"
+                } label: {
+                    Text("I'm custom style, Click Me!")
+                        .font(.subheadline)
+                }
+                //.buttonStyle(CustomPressableButtonStyle())
+                .customPressableButtonStyle(background: .yellow)
             }
-            
-            Button("I'm Plain, Click Me!"){
-                self.title = "Button #1.1 Pressed"
-            }
-            .buttonStyle(.plain)
-            
-            Button("I'm borderd, Click Me!"){
-                self.title = "Button #1.2 Pressed"
-            }
-            .controlSize(.large)
-            .buttonBorderShape(.capsule)
-            .buttonStyle(.bordered)
-            
-            Button("I'm borderedProminent, Click Me!"){
-                self.title = "Button #1.3 Pressed"
-            }
-            .buttonStyle(.borderedProminent)
-            
-            Button("I'm borderless, Click Me!"){
-                self.title = "Button #1.4 Pressed"
-            }
-            .buttonStyle(.borderless)
             
             Button(action: {
                 self.title = "Button #2 Pressed"
@@ -70,9 +108,9 @@ struct ButtonBootcamp: View {
                     }
             })
             
-            Button(action: {
+            Button {
                 self.title = "Button #4 Pressed"
-            }, label: {
+            } label: {
                 Text("Finish".uppercased())
                     .font(.caption)
                     .bold()
@@ -82,7 +120,8 @@ struct ButtonBootcamp: View {
                     .background(
                         Capsule()
                             .stroke(Color.gray, lineWidth: 1))
-            })
+            }
+            
             
             Text("Tap")
                 .font(.headline)
@@ -98,10 +137,11 @@ struct ButtonBootcamp: View {
                 .onTapGesture {
                     self.title = "Button #5 Tapped"
                 }
-            //                .onTapGesture(count: 2){
-            //                    self.title = "Button #6 Tapped"
-            //                }
-            
+                /*
+                 .onTapGesture(count: 2){
+                     self.title = "Button #6 Tapped"
+                 }
+                 */
         }
     }
 }
