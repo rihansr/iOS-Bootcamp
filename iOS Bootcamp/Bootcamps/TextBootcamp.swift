@@ -12,7 +12,7 @@ struct TextBootcamp: View {
     @Environment(\.sizeCategory) var sizeCategory
     
     var body: some View {
-        VStack{
+        VStack(spacing: 32){
             Text("Aa")
                 .textSelection(.enabled)
                 .fontWeight(.black)
