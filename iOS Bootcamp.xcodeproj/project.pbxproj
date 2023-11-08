@@ -60,6 +60,7 @@
 		63CA1D5A2AF3623D0090BD01 /* SubscribersBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA1D592AF3623D0090BD01 /* SubscribersBootcamp.swift */; };
 		63CA1D5C2AF377B20090BD01 /* FileManagerBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA1D5B2AF377B20090BD01 /* FileManagerBootcamp.swift */; };
 		63CA1D642AF3B2090090BD01 /* CacheBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA1D632AF3B2090090BD01 /* CacheBootcamp.swift */; };
+		63CCE0862AFB7DED00E88AEA /* AnyTransitionBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */; };
 		63CE08162AE67F8B001588FE /* LongPressGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */; };
 		63CE08182AE68CC9001588FE /* MagnificationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */; };
 		63CE081B2AE693F8001588FE /* RotationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */; };
@@ -173,6 +174,7 @@
 		63CAFF9B2AD65D1B0081E35C /* Loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Loops.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9C2AD664900081E35C /* Statements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Statements.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9D2AD6858F0081E35C /* FilterSortMap.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterSortMap.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionBootcamp.swift; sourceTree = "<group>"; };
 		63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureBootcamp.swift; sourceTree = "<group>"; };
 		63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureBootcamp.swift; sourceTree = "<group>"; };
 		63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureBootcamp.swift; sourceTree = "<group>"; };
@@ -253,17 +255,11 @@
 		630D44672AF8EB0400054FF9 /* AdvancedSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */,
 				630D44682AF8EB4700054FF9 /* ViewModifiersBootcamp.swift */,
+				63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */,
 			);
 			path = AdvancedSwiftUI;
-			sourceTree = "<group>";
-		};
-		631F5FB42ADD3FE300768AEF /* AdvancedLearning */ = {
-			isa = PBXGroup;
-			children = (
-				631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */,
-			);
-			path = AdvancedLearning;
 			sourceTree = "<group>";
 		};
 		633BCB402AF4B29300F7F619 /* DownloadingImages */ = {
@@ -334,11 +330,10 @@
 		633DBF9A2AD3CA6500F45A48 /* iOS Bootcamp */ = {
 			isa = PBXGroup;
 			children = (
-				630D44672AF8EB0400054FF9 /* AdvancedSwiftUI */,
 				633DBF9B2AD3CA6500F45A48 /* iOS_BootcampApp.swift */,
+				630D44672AF8EB0400054FF9 /* AdvancedSwiftUI */,
 				633BCB402AF4B29300F7F619 /* DownloadingImages */,
 				63CE08142AE67AF6001588FE /* IntermediateSwiftUI */,
-				631F5FB42ADD3FE300768AEF /* AdvancedLearning */,
 				63B51F8D2AD6A0D6004FD296 /* SwiftConcurrency */,
 				63DED9762AD3EC390057A584 /* SwiftBasics */,
 				63B51F7B2AD69E32004FD296 /* TodoApp */,
@@ -678,6 +673,7 @@
 				63DED95F2AD3CCE70057A584 /* AppStorageBootcamp.swift in Sources */,
 				633BCB542AF4C4DC00F7F619 /* ImageLoadingViewModel.swift in Sources */,
 				63B51F8F2AD6B4B7004FD296 /* DoCatchTryThrowsBootcamp.swift in Sources */,
+				63CCE0862AFB7DED00E88AEA /* AnyTransitionBootcamp.swift in Sources */,
 				63B51F8B2AD69E75004FD296 /* TaskItem.swift in Sources */,
 				63DED94C2AD3CCE70057A584 /* GridViewBootcamp.swift in Sources */,
 				63051F572AE9259200B0C64A /* HashableBootcamp.swift in Sources */,
