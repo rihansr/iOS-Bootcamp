@@ -18,9 +18,8 @@ struct SafeAreaBootcamp: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Color.secondary.ignoresSafeArea(edges: .all)
-        )
+        //.background(Color.yellow.ignoresSafeArea(edges: .horizontal))
+        .background( Color.yellow.ignoresSafeArea(edges: .all))
     }
 }
 

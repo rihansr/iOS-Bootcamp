@@ -61,6 +61,7 @@
 		63CA1D5C2AF377B20090BD01 /* FileManagerBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA1D5B2AF377B20090BD01 /* FileManagerBootcamp.swift */; };
 		63CA1D642AF3B2090090BD01 /* CacheBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CA1D632AF3B2090090BD01 /* CacheBootcamp.swift */; };
 		63CCE0862AFB7DED00E88AEA /* AnyTransitionBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */; };
+		63CCE0882AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CCE0872AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift */; };
 		63CE08162AE67F8B001588FE /* LongPressGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */; };
 		63CE08182AE68CC9001588FE /* MagnificationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */; };
 		63CE081B2AE693F8001588FE /* RotationGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */; };
@@ -175,6 +176,7 @@
 		63CAFF9C2AD664900081E35C /* Statements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Statements.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CAFF9D2AD6858F0081E35C /* FilterSortMap.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterSortMap.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionBootcamp.swift; sourceTree = "<group>"; };
+		63CCE0872AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectBootcamp.swift; sourceTree = "<group>"; };
 		63CE08152AE67F8B001588FE /* LongPressGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGestureBootcamp.swift; sourceTree = "<group>"; };
 		63CE08172AE68CC9001588FE /* MagnificationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureBootcamp.swift; sourceTree = "<group>"; };
 		63CE081A2AE693F8001588FE /* RotationGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureBootcamp.swift; sourceTree = "<group>"; };
@@ -255,9 +257,10 @@
 		630D44672AF8EB0400054FF9 /* AdvancedSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */,
 				630D44682AF8EB4700054FF9 /* ViewModifiersBootcamp.swift */,
 				63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */,
+				631F5FB22ADD3AC000768AEF /* ProtocolsBootcamp.swift */,
+				63CCE0872AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift */,
 			);
 			path = AdvancedSwiftUI;
 			sourceTree = "<group>";
@@ -477,8 +480,8 @@
 				63DED92E2AD3CCE70057A584 /* OnAppearBootcamp.swift */,
 				63DED92D2AD3CCE70057A584 /* PickerBootcamp.swift */,
 				63DED91E2AD3CCE70057A584 /* SheetBootcamp.swift */,
-				63DED9292AD3CCE70057A584 /* SafeAreaInsetsBootcamp.swift */,
 				63DED92B2AD3CCE70057A584 /* SafeAreaBootcamp.swift */,
+				63DED9292AD3CCE70057A584 /* SafeAreaInsetsBootcamp.swift */,
 				63DED9312AD3CCE70057A584 /* ShapesBootcamp.swift */,
 				63DED9382AD3CCE70057A584 /* StacksBootcamp.swift */,
 				63DED9392AD3CCE70057A584 /* StepperBootcamp.swift */,
@@ -644,6 +647,7 @@
 				63B916822AE23E5C0088C475 /* ActorsBootcamp.swift in Sources */,
 				630D44692AF8EB4700054FF9 /* ViewModifiersBootcamp.swift in Sources */,
 				63DED9682AD3CCE70057A584 /* DarkModeBootcamp.swift in Sources */,
+				63CCE0882AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift in Sources */,
 				63DED9502AD3CCE70057A584 /* ColorPickerBootcamp.swift in Sources */,
 				633BCB522AF4C3FE00F7F619 /* PhotoView.swift in Sources */,
 				63DED9482AD3CCE70057A584 /* SheetBootcamp.swift in Sources */,
