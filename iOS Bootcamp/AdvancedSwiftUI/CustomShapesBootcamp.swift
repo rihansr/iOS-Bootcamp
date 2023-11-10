@@ -15,7 +15,6 @@
  (minX,maxY) * (midX,maxY) * (maxX,maxY)
  */
 
-
 import SwiftUI
 
 struct Triangle: Shape {
@@ -56,15 +55,22 @@ struct Trapezoid: Shape {
 }
 
 struct PacManArc: Shape{
+    var offsetAmount: Double
+    
+    var animatableData: Double {
+        get { offsetAmount }
+        set { offsetAmount = newValue }
+    }
+    
     func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: CGPoint(x: rect.midX, y: rect.midY))
             path.addArc(
                 center: CGPoint(x: rect.midX, y: rect.midY),
-                radius: rect.width/2,
-                startAngle: Angle(degrees: -20),
-                endAngle: Angle(degrees: 20),
-                clockwise: true
+                radius: rect.height/2,
+                startAngle: Angle(degrees: offsetAmount),
+                endAngle: Angle(degrees: 360 - offsetAmount),
+                clockwise: false
             )
         }
     }
@@ -103,16 +109,24 @@ struct Quad: Shape {
 }
 
 struct Water: Shape{
+    
+    var value: CGFloat
+    
+    var animatableData: CGFloat {
+        get { value }
+        set { value = newValue }
+    }
+    
     func path(in rect: CGRect) -> Path {
         Path { path in
             path.move(to: CGPoint(x: rect.minX, y: rect.midY))
             path.addQuadCurve(
                 to: CGPoint(x: rect.midX, y: rect.midY),
-                control: CGPoint(x: rect.width * 0.25, y: rect.height * 0.40)
+                control: CGPoint(x: rect.width * 0.25, y: rect.height * value)
             )
             path.addQuadCurve(
                 to: CGPoint(x: rect.maxX, y: rect.midY),
-                control: CGPoint(x: rect.width * 0.75, y: rect.height * 0.60)
+                control: CGPoint(x: rect.width * 0.75, y: rect.height * (1-value))
             )
             path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
             path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
@@ -121,30 +135,69 @@ struct Water: Shape{
     }
 }
 
+struct OneSidedRoundedRectangle: Shape {
+    
+    var cornerRadius: CGFloat
+    
+    var animatableData: CGFloat {
+        get { cornerRadius }
+        set { cornerRadius = newValue }
+    }
+    
+    func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.move(to: .zero)
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - cornerRadius))
+            path.addArc(
+                center: CGPoint(x: rect.maxX-cornerRadius, y: rect.maxY - cornerRadius),
+                radius: cornerRadius,
+                startAngle: Angle(degrees: 0),
+                endAngle: Angle(degrees: 360),
+                clockwise: false
+            )
+            path.addLine(to: CGPoint(x: rect.maxX - cornerRadius, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            path.move(to: .zero)
+        }
+    }
+}
+
 struct CustomShapesBootcamp: View {
+    
+    @State var animate: Bool = false
+    
     var body: some View {
         //Triangle()
         //Diamond()
         //Trapezoid()
-        //PacManArc()
+        PacManArc(offsetAmount: animate ? 20 : 0)
         //Arc()
         //Quad()
-        Water()
+        //Water(value: animate ? 0.3 : 0.7)
+        //OneSidedRoundedRectangle(cornerRadius: animate ? 60 : 0)
             /*
              .stroke(style: StrokeStyle(
                  lineWidth: 3, lineCap: .round, dash: [10]
              ))
              */
-            .fill(
-                LinearGradient(
-                    colors: [.teal, .cyan, .blue],
-                    startPoint: .topLeading, endPoint: .bottomTrailing
-                )
-            )
-            //.foregroundColor(.blue)
-            //.frame(width: 200, height: 100)
-            .frame(maxWidth: .infinity)
+            /*
+             .fill(
+                 LinearGradient(
+                     colors: [.teal, .cyan, .blue],
+                     startPoint: .topLeading, endPoint: .bottomTrailing
+                 )
+             )
+             */
+            .foregroundColor(.yellow)
+            .frame(width: 250, height: 250)
+            //.frame(maxWidth: .infinity)
             .ignoresSafeArea()
+            .onAppear{
+                withAnimation(Animation.easeInOut(duration: 0.25).repeatForever()) {
+                    animate.toggle()
+                }
+            }
         
         /*
          Image("png_image")
