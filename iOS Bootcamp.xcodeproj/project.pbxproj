@@ -114,6 +114,7 @@
 		63E74C6A2AE6322400DF7961 /* SearchableBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E74C692AE6322400DF7961 /* SearchableBootcamp.swift */; };
 		63E9A91A2ADF9753004A7133 /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */; };
 		63ED10212AEB757500682015 /* CoreDataRelationshipsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED10202AEB757500682015 /* CoreDataRelationshipsBootcamp.swift */; };
+		63EF96542B05D04700806FFD /* CustomTabBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF96532B05D04700806FFD /* CustomTabBootcamp.swift */; };
 		63F2E8B02AE782D0006060BC /* DragGestureBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */; };
 		63F2E8B22AE7AB61006060BC /* ScrollViewReaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */; };
 		63F2E8B42AE7C0EA006060BC /* GeometryReaderBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */; };
@@ -237,6 +238,7 @@
 		63E9A9192ADF9753004A7133 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
 		63ED101F2AEB723400682015 /* Enums.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enums.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		63ED10202AEB757500682015 /* CoreDataRelationshipsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationshipsBootcamp.swift; sourceTree = "<group>"; };
+		63EF96532B05D04700806FFD /* CustomTabBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBootcamp.swift; sourceTree = "<group>"; };
 		63F2E8AF2AE782D0006060BC /* DragGestureBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureBootcamp.swift; sourceTree = "<group>"; };
 		63F2E8B12AE7AB61006060BC /* ScrollViewReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReaderBootcamp.swift; sourceTree = "<group>"; };
 		63F2E8B32AE7C0EA006060BC /* GeometryReaderBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderBootcamp.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				63CCE0852AFB7DED00E88AEA /* AnyTransitionBootcamp.swift */,
 				633A19102AFE031C005F9A5B /* CustomShapesBootcamp.swift */,
+				63EF96532B05D04700806FFD /* CustomTabBootcamp.swift */,
 				633A19122AFE4D1C005F9A5B /* GenericsBootcamp.swift */,
 				63CCE0872AFB98E300E88AEA /* MatchedGeometryEffectBootcamp.swift */,
 				63A3FCA62B04AE1E00EBF3D0 /* PreferenceKeyBootcamp.swift */,
@@ -601,6 +604,7 @@
 				633BCB562AF4CACC00F7F619 /* PhotoModelCacheManager.swift in Sources */,
 				63C198012AF0E8EC00566A0D /* BackgroundThreadBootcamp.swift in Sources */,
 				63DED9582AD3CCE70057A584 /* OnAppearBootcamp.swift in Sources */,
+				63EF96542B05D04700806FFD /* CustomTabBootcamp.swift in Sources */,
 				63DED95D2AD3CCE70057A584 /* ViewModelBootcamp.swift in Sources */,
 				63C198052AF1053B00566A0D /* TypealiasBootcamp.swift in Sources */,
 				63B51F872AD69E75004FD296 /* AddView.swift in Sources */,
